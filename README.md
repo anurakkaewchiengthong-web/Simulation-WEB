@@ -1,20 +1,22 @@
 # Radio Coverage Lab
 
-Independent, static radio coverage planning prototype. On GitHub, open `index.html`; in the Sites checkout, open `dist/index.html`. No dependencies and no connection to the original Azimuth website.
+Independent, static radio coverage planning prototype. On GitHub, open `index.html`; in the Sites checkout, open `dist/index.html`. No build dependencies or connection to the Azimuth website.
 
 ## Model
 
-For each sample point within the study radius:
+For every point in the circular grid:
 
-- `FSPL(dB) = 32.44 + 20 log10(f_MHz) + 20 log10(d_km)`; a 10 m floor avoids a singularity at the transmitter.
-- `path loss = FSPL + user-entered constant excess loss`.
-- `downlink = base TX + horizontal antenna gain - base feeder loss + mobile gain - mobile loss - path loss`.
-- `uplink = mobile TX + mobile gain - mobile loss + horizontal base antenna gain - base feeder loss - path loss`.
-- A point passes two-way service only when both received powers exceed the entered receive threshold.
-- Sector approximation: `A(θ) = min(30, 12 × (Δθ / HPBW)^2) dB` where `Δθ` is the wrapped bearing offset. This is a simplified horizontal pattern, not an equipment-specific antenna pattern.
+1. Read Mapzen Terrarium terrain tiles (AWS Open Data) at an adaptive zoom; decode terrain metres as `R × 256 + G + B / 256 − 32768`.
+2. Sample the radial terrain profile from base to receiver (up to 100 interior samples). Use a `K = 4/3` effective Earth radius and the entered antenna heights.
+3. Find the largest knife-edge diffraction parameter `v` along that path. Approximate its excess loss using `J(v) = 6.9 + 20 log10(√((v−0.1)²+1) + v−0.1)` for `v > −0.78`, otherwise 0 dB. This is a **single dominant edge approximation**; it does not account for multiple obstacles or site-specific propagation percentages.
+4. `FSPL(dB) = 32.44 + 20 log10(f_MHz) + 20 log10(d_km)`; a 10 m floor avoids a singularity at the transmitter.
+5. `path loss = FSPL + user-entered constant clutter loss + diffraction loss`.
+6. `downlink = base TX + horizontal antenna gain - base feeder loss + mobile gain - mobile loss - path loss`.
+7. `uplink = mobile TX + mobile gain - mobile loss + horizontal base antenna gain - base feeder loss - path loss`.
+8. A point passes two-way service only when both received powers exceed the entered receive threshold.
 
-The plotted circle uses a local equirectangular coordinate approximation for display and CSV coordinates over an OpenStreetMap tile basemap. Clicking a point requests a 41-sample SRTM 90 m terrain profile from Open Topo Data and checks geometric line of sight with K=4/3. The terrain profile does not alter the coverage raster or path loss. The model does not calculate diffraction, buildings, foliage, antenna elevation pattern, interference, or a specific ITU-R propagation recommendation. The OSM tile service and public elevation API may be unavailable or rate-limited. Its outputs are exploratory and must not be represented as validated field coverage.
+Sector approximation: `A(θ) = min(30, 12 × (Δθ / HPBW)^2) dB`. This is a simplified horizontal pattern, not an equipment-specific antenna pattern. The plotted circle uses a local equirectangular coordinate approximation for display and CSV coordinates over an OpenStreetMap basemap.
 
-## Next engineering milestone
+The DEM dataset's native resolution varies by source and region; the adaptive tile zoom and at most 100 radial samples can miss narrow ridges. It does not model multiple-edge diffraction, vegetation, buildings, interference, antenna elevation pattern, multipath, rain, or a specific ITU-R propagation Recommendation. Results are exploratory and require field calibration. If terrain data fails to load, the terrain mode does not present a fallback as though it were terrain-adjusted coverage. A separate baseline mode displays FSPL plus constant clutter loss.
 
-Add elevation/land-cover data, a specified and independently validated implementation of ITU-R P.1812, measured equipment-specific patterns and receive thresholds, pointwise uplink/downlink calibration, and acceptance against drive-test data. The terrain-model implementation must expose its version, datasets, resolutions, time percentage and input assumptions in exports.
+Sources: https://registry.opendata.aws/terrain-tiles/ and https://operations.osmfoundation.org/policies/tiles/.
