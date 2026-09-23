@@ -1,6 +1,6 @@
 # Radio Coverage Lab
 
-Independent, static radio coverage planning prototype. Open `dist/index.html` in a browser. No dependencies and no connection to the original Azimuth website.
+Independent, static radio coverage planning prototype. Open `index.html` in a browser. No dependencies and no connection to the original Azimuth website.
 
 ## Model
 
