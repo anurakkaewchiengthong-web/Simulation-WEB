@@ -1,6 +1,6 @@
 # Radio Coverage Lab
 
-Independent, static radio coverage planning prototype. Open `index.html` in a browser. No dependencies and no connection to the original Azimuth website.
+Independent, static radio coverage planning prototype. On GitHub, open `index.html`; in the Sites checkout, open `dist/index.html`. No dependencies and no connection to the original Azimuth website.
 
 ## Model
 
@@ -13,7 +13,7 @@ For each sample point within the study radius:
 - A point passes two-way service only when both received powers exceed the entered receive threshold.
 - Sector approximation: `A(θ) = min(30, 12 × (Δθ / HPBW)^2) dB` where `Δθ` is the wrapped bearing offset. This is a simplified horizontal pattern, not an equipment-specific antenna pattern.
 
-The plotted circle uses a local equirectangular coordinate approximation for display and CSV coordinates. It does not model terrain, diffraction, buildings, foliage, antenna elevation pattern, interference, or a specific ITU-R propagation recommendation. Its outputs are exploratory and must not be represented as validated field coverage.
+The plotted circle uses a local equirectangular coordinate approximation for display and CSV coordinates over an OpenStreetMap tile basemap. Clicking a point requests a 41-sample SRTM 90 m terrain profile from Open Topo Data and checks geometric line of sight with K=4/3. The terrain profile does not alter the coverage raster or path loss. The model does not calculate diffraction, buildings, foliage, antenna elevation pattern, interference, or a specific ITU-R propagation recommendation. The OSM tile service and public elevation API may be unavailable or rate-limited. Its outputs are exploratory and must not be represented as validated field coverage.
 
 ## Next engineering milestone
 
