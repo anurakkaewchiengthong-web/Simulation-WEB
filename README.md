@@ -2,6 +2,12 @@
 
 Independent, static radio coverage planning prototype. On GitHub, open `index.html`; in the Sites checkout, open `dist/index.html`. No build dependencies or connection to the Azimuth website.
 
+## Google satellite basemap
+
+Use the map selector to choose **Google satellite imagery** (Google Maps JavaScript API, hybrid map type). Paste a Maps JavaScript API key in the page and click the load button. The key is sent directly from the browser to Google only when requested; it is not included in this repository or persisted in browser storage. The Google Cloud project must have the Maps JavaScript API enabled and suitable billing or a supported demo key. Restrict the key to the deployment website's HTTP referrer and to Maps JavaScript API. The Google imagery is a basemap; terrain diffraction still comes from independent Mapzen/AWS DEM tiles, not Google elevation data. OpenStreetMap remains the default when no Google key is supplied.
+
+The Google Maps JavaScript API is a 2D satellite/hybrid map, not the Google Earth 3D application.
+
 ## Model
 
 For every point in the circular grid:
