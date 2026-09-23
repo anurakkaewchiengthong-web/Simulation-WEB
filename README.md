@@ -17,6 +17,8 @@ For every point in the circular grid:
 
 Sector approximation: `A(θ) = min(30, 12 × (Δθ / HPBW)^2) dB`. This is a simplified horizontal pattern, not an equipment-specific antenna pattern. The plotted circle uses a local equirectangular coordinate approximation for display and CSV coordinates over an OpenStreetMap basemap.
 
+The map can be zoomed with buttons or mouse wheel and panned by dragging. Zoomed views recalculate receiver points at screen resolution; the global coverage percentage and CSV retain the full-study grid. Zooming does not increase the underlying DEM tile resolution.
+
 The DEM dataset's native resolution varies by source and region; the adaptive tile zoom and at most 100 radial samples can miss narrow ridges. It does not model multiple-edge diffraction, vegetation, buildings, interference, antenna elevation pattern, multipath, rain, or a specific ITU-R propagation Recommendation. Results are exploratory and require field calibration. If terrain data fails to load, the terrain mode does not present a fallback as though it were terrain-adjusted coverage. A separate baseline mode displays FSPL plus constant clutter loss.
 
 Sources: https://registry.opendata.aws/terrain-tiles/ and https://operations.osmfoundation.org/policies/tiles/.
