@@ -2,6 +2,21 @@
 
 Independent, static radio coverage planning prototype. On GitHub, open `index.html`; in the Sites checkout, open `dist/index.html`. No build dependencies or connection to the Azimuth website.
 
+## Propagation model selector
+
+The original **FSPL + clutter + optional DEM diffraction** mode remains the default. Two empirical alternatives are selectable:
+
+| Mode | ETSI TR 101 362 Annex B limits | Environments |
+| --- | --- | --- |
+| Okumura–Hata | 150–1000 MHz; base height 30–200 m; mobile height 1–10 m; distance 1–20 km | Medium city; large city (special mobile antenna correction); suburban; quasi-open rural; open rural |
+| COST‑231 Hata | 1500–2000 MHz; same antenna and distance ranges | Medium city/suburban centre (`Cm=0`), metropolitan centre (`Cm=3 dB`); quasi-open/open rural use the Hata rural corrections described in the ETSI document |
+
+For Hata, the urban median path loss is `69.55 + 26.16 log10(f) − 13.82 log10(hB) − a(hM) + (44.9 − 6.55 log10(hB)) log10(d)`. For COST‑231 Hata it is `46.3 + 33.9 log10(f) − 13.82 log10(hB) − a(hM) + (44.9 − 6.55 log10(hB)) log10(d) + Cm`, with frequency in MHz and distance in km. The medium-city/mobile correction is `(1.1 log10(f) − 0.7) hM − (1.56 log10(f) − 0.8)`; Hata's large-city option uses the frequency-dependent correction in ETSI Annex B. Suburban Hata and rural corrections follow that same annex. The app rejects invalid frequency/antenna heights and leaves distances below 1 km or above 20 km uncoloured rather than extrapolating. The pass percentage and CSV in an empirical mode cover only valid receiver samples. The base-height field is treated as the **effective** base antenna height required by these models; a nominal mast height may need to be adjusted for terrain.
+
+Hata and COST‑231 Hata already include aggregate environment effects, so they replace FSPL + separate P.2108 clutter + DEM diffraction. Selecting either empirical model disables the separate clutter and DEM controls; returning to the baseline restores the previous selections. COST‑231 Hata does not apply to the default 857 MHz frequency. The current terrain-aware baseline is still the useful map view for mountainous areas, though it remains a simplified single-edge approximation.
+
+Reference: [ETSI TR 101 362 V7.0.0, Annex B](https://www.etsi.org/deliver/etsi_tr/101300_101399/101362/07.00.00_60/tr_101362v070000p.pdf).
+
 ## Google satellite basemap
 
 Use the map selector to choose **Google satellite imagery** (Google Maps JavaScript API, hybrid map type). Paste a Maps JavaScript API key in the page and click the load button. The key is sent directly from the browser to Google only when requested; it is not included in this repository or persisted in browser storage. The Google Cloud project must have the Maps JavaScript API enabled and suitable billing or a supported demo key. Restrict the key to the deployment website's HTTP referrer and to Maps JavaScript API. The Google imagery is a basemap; terrain diffraction still comes from independent Mapzen/AWS DEM tiles, not Google elevation data. OpenStreetMap remains the default when no Google key is supplied.
@@ -23,7 +38,7 @@ For every point in the circular grid (105×105, 201×201, or 301×301 selectable
 
 Sector approximation: `A(θ) = min(30, 12 × (Δθ / HPBW)^2) dB`. This is a simplified horizontal pattern, not an equipment-specific antenna pattern. The plotted circle uses a local equirectangular coordinate approximation for display and CSV coordinates over an OpenStreetMap basemap.
 
-The map can be zoomed with buttons or mouse wheel and panned by dragging. A continuous color ramp and bilinear interpolation between computed signal values make the heatmap smoother in both full and zoomed views; antialiasing is applied at the study-circle edge. This interpolation is for display only, and cannot improve the physical resolution of DEM or the point calculations. The global coverage percentage and CSV retain the actual full-study grid. The CSV includes clutter correction and category. Higher grid settings load finer DEM tiles where available, limited to 80 tiles and the source DEM resolution. Zooming alone does not increase the underlying DEM tile resolution. Calculation runs in batches with progress feedback; a new run cancels the previous one.
+The map can be zoomed with buttons or mouse wheel and panned by dragging. A continuous color ramp and bilinear interpolation between computed signal values make the heatmap smoother in both full and zoomed views; antialiasing is applied at the study-circle edge or at the empirical 1–20 km annulus. This interpolation is for display only, and cannot improve the physical resolution of DEM or the point calculations. The coverage percentage and CSV retain the actual sampled grid for the selected model. The CSV includes path loss, a model ID, and diagnostic FSPL; in empirical modes **FSPL + clutter + diffraction is not the calculated path loss**, and clutter/diffraction columns are zero because those separate corrections are not applied. Higher grid settings load finer DEM tiles where available, limited to 80 tiles and the source DEM resolution. Zooming alone does not increase the underlying DEM tile resolution. Calculation runs in batches with progress feedback; a new run cancels the previous one.
 
 The DEM dataset's native resolution varies by source and region; the adaptive tile zoom and at most 120 or 180 radial samples can miss narrow ridges. The model uses a specific terminal correction from ITU-R P.2108-1, but is **not** a full ITU-R P.1812 propagation implementation. It does not infer actual building or tree cover at each pixel and does not model multiple-edge diffraction, interference, antenna elevation pattern, multipath or rain. Results are exploratory and require field calibration. If terrain data fails to load, the terrain mode does not present a fallback as though it were terrain-adjusted coverage. A separate baseline mode displays FSPL plus the selected clutter correction.
 
