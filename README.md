@@ -59,3 +59,7 @@ The map uses the supplied Zone palette at levels ≥−45, ≥−55, ≥−65, �
 ## Near-station display in Hata modes
 
 Hata is specified for 1–20 km and would otherwise leave a 1 km blank circle around the station. The site now draws the interior using `L(d) = L_Hata(1 km) + 20 log10(max(d, 0.01 km))` for `d < 1 km`. This is continuous at 1 km and is labelled as an approximation in the interface; it is not a Hata prediction validated at short range. If DEM is enabled, the existing terrain diffraction term is still evaluated for interior paths of at least 100 m. Values below −105 dBm remain transparent.
+
+## Export to Google Earth
+
+After a simulation, choose Downlink, Uplink, or Two-way and click **ส่งออก Google Earth (KML)**. The self-contained vector KML includes colored coverage polygons, the base-station point and the study-radius outline. Import it in Google Earth Pro or Google Earth web. The exported colors use the selected signal direction and the current Zone palette; values below −105 dBm have no polygons. Valid grid samples are averaged into a grid of at most 96 × 96 cells and same-color horizontal neighbors are merged, keeping the file below 10,000 features for web import. The export grid can therefore be coarser than the web calculation grid. The separate CSV retains all computed receiver samples.
