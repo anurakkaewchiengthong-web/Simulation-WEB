@@ -54,7 +54,7 @@ Sources: https://www.itu.int/rec/R-REC-P.2108, https://registry.opendata.aws/ter
 
 ## Coverage colors
 
-The map uses the supplied seven fixed colors for signal levels ≥−40, ≥−50, ≥−60, ≥−70, ≥−80, ≥−90, and ≥−105 dBm, respectively (blue, cyan, aqua, green, lime, orange, red). Values strictly below −105 dBm have no overlay. Colors describe selected downlink, uplink, or weaker two-way receive power; the separate configurable receive threshold still determines the pass percentage.
+The map uses the supplied Zone palette at levels ≥−45, ≥−55, ≥−65, ≥−75, ≥−85, ≥−95, and ≥−100 dBm, respectively (cyan, light blue, light green, green, yellow, amber, red). The interval from −105 to below −100 dBm remains red. Values strictly below −105 dBm have no overlay. Colors describe selected downlink, uplink, or weaker two-way receive power; the separate configurable receive threshold still determines the pass percentage.
 
 ## Near-station display in Hata modes
 
