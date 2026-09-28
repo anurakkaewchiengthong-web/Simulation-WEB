@@ -51,3 +51,7 @@ The map can be zoomed with buttons or mouse wheel and panned by dragging. A cont
 The DEM dataset's native resolution varies by source and region; the bundled zoom 12 tile pixels and at most 120 or 180 radial samples can miss narrow ridges. The model uses a specific terminal correction from ITU-R P.2108-1, but is **not** a full ITU-R P.1812 propagation implementation. It does not infer actual building or tree cover at each pixel and does not model multiple-edge diffraction, interference, antenna elevation pattern, multipath or rain. Results are exploratory and require field calibration. If terrain data fails to load, the terrain mode does not present a fallback as though it were terrain-adjusted coverage. A separate baseline mode displays FSPL plus the selected clutter correction.
 
 Sources: https://www.itu.int/rec/R-REC-P.2108, https://registry.opendata.aws/terrain-tiles/ and https://operations.osmfoundation.org/policies/tiles/.
+
+## Coverage colors
+
+The map uses the supplied seven fixed colors for signal levels ≥−40, ≥−50, ≥−60, ≥−70, ≥−80, ≥−90, and ≥−105 dBm, respectively (blue, cyan, aqua, green, lime, orange, red). Values strictly below −105 dBm have no overlay. Colors describe selected downlink, uplink, or weaker two-way receive power; the separate configurable receive threshold still determines the pass percentage.
