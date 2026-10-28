@@ -1,0 +1,14 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const ctx={};ctx.globalThis=ctx;vm.createContext(ctx);vm.runInContext(fs.readFileSync('itu-grid.js','utf8'),ctx);
+const g=ctx.ITUGrid;
+const csv='latitude,longitude,value\n0,0,10\n0,2,20\n2,0,30\n2,2,40';
+const pts=g.parseCSV(csv);
+assert.equal(g.lookup(pts,1,1),25);
+assert.equal(g.lookup(pts,0,0),10);
+assert.equal(g.lookup(pts,2,2),40);
+assert.throws(()=>g.lookup(pts,3,1),/outside/);
+assert.throws(()=>g.lookup(g.parseCSV('latitude,longitude,value\n0,0,1\n0,2,2\n2,0,3'),1,1),/Missing/);
+const mid=g.midpoint(18.106857,102.227164,18.116615,102.222684);
+assert(Math.abs(mid.lat-18.111736)<0.001);
+assert(Math.abs(mid.lon-102.224924)<0.001);
+console.log('ITU grid tests passed');
