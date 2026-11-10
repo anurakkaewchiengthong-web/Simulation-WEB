@@ -1,0 +1,5240 @@
+{
+  "schemaVersion": 1,
+  "manufacturer": "Huawei",
+  "device": "OptiX RTN 320F OAU 2F",
+  "odu": "XMC-3E",
+  "runningMode": "IS8+",
+  "ca": false,
+  "source": {
+    "title": "OptiX RTN 320F OAU 2F Product Description",
+    "version": "V100R022C10, Issue 05 (2024-01-10)",
+    "url": "https://drive.google.com/file/d/1W5awX4acoaeMyqlCtr83cw2esG3ganvW/view",
+    "ber": "BER 10^-6",
+    "berPage": 181,
+    "compatibilityTables": [
+      "1-53",
+      "1-55"
+    ],
+    "restrictionTable": "1-26",
+    "capacityPages": [
+      139,
+      140,
+      141,
+      154,
+      155,
+      156
+    ],
+    "sensitivityPages": [
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241,
+      242,
+      247,
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256
+    ]
+  },
+  "profiles": [
+    {
+      "id": "xmc3e-7-7-off",
+      "bandGHz": 7,
+      "bandwidthMHz": 7,
+      "xpic": false,
+      "capacityTable": "1-61",
+      "sensitivityTables": [
+        "1-167",
+        "1-168"
+      ],
+      "rows": [
+        {
+          "modulation": "QPSK Strong",
+          "typicalDbm": -96.0,
+          "throughput": [
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              14
+            ],
+            [
+              9,
+              19
+            ],
+            [
+              9,
+              26
+            ]
+          ]
+        },
+        {
+          "modulation": "QPSK",
+          "typicalDbm": -94.0,
+          "throughput": [
+            [
+              10,
+              13
+            ],
+            [
+              10,
+              17
+            ],
+            [
+              10,
+              22
+            ],
+            [
+              10,
+              30
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM Strong",
+          "typicalDbm": -89.5,
+          "throughput": [
+            [
+              18,
+              23
+            ],
+            [
+              18,
+              30
+            ],
+            [
+              18,
+              39
+            ],
+            [
+              18,
+              53
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM",
+          "typicalDbm": -87.5,
+          "throughput": [
+            [
+              21,
+              27
+            ],
+            [
+              21,
+              35
+            ],
+            [
+              21,
+              46
+            ],
+            [
+              22,
+              63
+            ]
+          ]
+        },
+        {
+          "modulation": "32QAM",
+          "typicalDbm": -84.5,
+          "throughput": [
+            [
+              27,
+              34
+            ],
+            [
+              27,
+              45
+            ],
+            [
+              27,
+              58
+            ],
+            [
+              28,
+              79
+            ]
+          ]
+        },
+        {
+          "modulation": "64QAM",
+          "typicalDbm": -81.5,
+          "throughput": [
+            [
+              34,
+              43
+            ],
+            [
+              34,
+              56
+            ],
+            [
+              34,
+              74
+            ],
+            [
+              35,
+              100
+            ]
+          ]
+        },
+        {
+          "modulation": "128QAM",
+          "typicalDbm": -78.5,
+          "throughput": [
+            [
+              40,
+              51
+            ],
+            [
+              40,
+              67
+            ],
+            [
+              41,
+              88
+            ],
+            [
+              41,
+              119
+            ]
+          ]
+        },
+        {
+          "modulation": "256QAM",
+          "typicalDbm": -75.5,
+          "throughput": [
+            [
+              44,
+              56
+            ],
+            [
+              45,
+              74
+            ],
+            [
+              45,
+              97
+            ],
+            [
+              46,
+              132
+            ]
+          ]
+        },
+        {
+          "modulation": "512QAM",
+          "typicalDbm": -72.0,
+          "throughput": [
+            [
+              50,
+              63
+            ],
+            [
+              51,
+              84
+            ],
+            [
+              51,
+              110
+            ],
+            [
+              52,
+              149
+            ]
+          ]
+        },
+        {
+          "modulation": "1024QAM",
+          "typicalDbm": -69.0,
+          "throughput": [
+            [
+              54,
+              69
+            ],
+            [
+              55,
+              91
+            ],
+            [
+              55,
+              119
+            ],
+            [
+              56,
+              161
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xmc3e-8-7-off",
+      "bandGHz": 8,
+      "bandwidthMHz": 7,
+      "xpic": false,
+      "capacityTable": "1-61",
+      "sensitivityTables": [
+        "1-167",
+        "1-168"
+      ],
+      "rows": [
+        {
+          "modulation": "QPSK Strong",
+          "typicalDbm": -96.0,
+          "throughput": [
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              14
+            ],
+            [
+              9,
+              19
+            ],
+            [
+              9,
+              26
+            ]
+          ]
+        },
+        {
+          "modulation": "QPSK",
+          "typicalDbm": -94.0,
+          "throughput": [
+            [
+              10,
+              13
+            ],
+            [
+              10,
+              17
+            ],
+            [
+              10,
+              22
+            ],
+            [
+              10,
+              30
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM Strong",
+          "typicalDbm": -89.5,
+          "throughput": [
+            [
+              18,
+              23
+            ],
+            [
+              18,
+              30
+            ],
+            [
+              18,
+              39
+            ],
+            [
+              18,
+              53
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM",
+          "typicalDbm": -87.5,
+          "throughput": [
+            [
+              21,
+              27
+            ],
+            [
+              21,
+              35
+            ],
+            [
+              21,
+              46
+            ],
+            [
+              22,
+              63
+            ]
+          ]
+        },
+        {
+          "modulation": "32QAM",
+          "typicalDbm": -84.5,
+          "throughput": [
+            [
+              27,
+              34
+            ],
+            [
+              27,
+              45
+            ],
+            [
+              27,
+              58
+            ],
+            [
+              28,
+              79
+            ]
+          ]
+        },
+        {
+          "modulation": "64QAM",
+          "typicalDbm": -81.5,
+          "throughput": [
+            [
+              34,
+              43
+            ],
+            [
+              34,
+              56
+            ],
+            [
+              34,
+              74
+            ],
+            [
+              35,
+              100
+            ]
+          ]
+        },
+        {
+          "modulation": "128QAM",
+          "typicalDbm": -78.5,
+          "throughput": [
+            [
+              40,
+              51
+            ],
+            [
+              40,
+              67
+            ],
+            [
+              41,
+              88
+            ],
+            [
+              41,
+              119
+            ]
+          ]
+        },
+        {
+          "modulation": "256QAM",
+          "typicalDbm": -75.5,
+          "throughput": [
+            [
+              44,
+              56
+            ],
+            [
+              45,
+              74
+            ],
+            [
+              45,
+              97
+            ],
+            [
+              46,
+              132
+            ]
+          ]
+        },
+        {
+          "modulation": "512QAM",
+          "typicalDbm": -72.0,
+          "throughput": [
+            [
+              50,
+              63
+            ],
+            [
+              51,
+              84
+            ],
+            [
+              51,
+              110
+            ],
+            [
+              52,
+              149
+            ]
+          ]
+        },
+        {
+          "modulation": "1024QAM",
+          "typicalDbm": -69.0,
+          "throughput": [
+            [
+              54,
+              69
+            ],
+            [
+              55,
+              91
+            ],
+            [
+              55,
+              119
+            ],
+            [
+              56,
+              161
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xmc3e-7-14-off",
+      "bandGHz": 7,
+      "bandwidthMHz": 14,
+      "xpic": false,
+      "capacityTable": "1-61",
+      "sensitivityTables": [
+        "1-169",
+        "1-170"
+      ],
+      "rows": [
+        {
+          "modulation": "QPSK Strong",
+          "typicalDbm": -94.0,
+          "throughput": [
+            [
+              18,
+              23
+            ],
+            [
+              18,
+              30
+            ],
+            [
+              18,
+              40
+            ],
+            [
+              19,
+              54
+            ]
+          ]
+        },
+        {
+          "modulation": "QPSK",
+          "typicalDbm": -92.0,
+          "throughput": [
+            [
+              21,
+              27
+            ],
+            [
+              21,
+              36
+            ],
+            [
+              22,
+              47
+            ],
+            [
+              22,
+              63
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM Strong",
+          "typicalDbm": -86.5,
+          "throughput": [
+            [
+              37,
+              47
+            ],
+            [
+              38,
+              62
+            ],
+            [
+              38,
+              82
+            ],
+            [
+              39,
+              111
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM",
+          "typicalDbm": -84.5,
+          "throughput": [
+            [
+              44,
+              55
+            ],
+            [
+              44,
+              73
+            ],
+            [
+              44,
+              96
+            ],
+            [
+              45,
+              130
+            ]
+          ]
+        },
+        {
+          "modulation": "32QAM",
+          "typicalDbm": -81.5,
+          "throughput": [
+            [
+              55,
+              70
+            ],
+            [
+              55,
+              92
+            ],
+            [
+              56,
+              120
+            ],
+            [
+              57,
+              163
+            ]
+          ]
+        },
+        {
+          "modulation": "64QAM",
+          "typicalDbm": -78.5,
+          "throughput": [
+            [
+              69,
+              88
+            ],
+            [
+              70,
+              116
+            ],
+            [
+              71,
+              152
+            ],
+            [
+              72,
+              206
+            ]
+          ]
+        },
+        {
+          "modulation": "128QAM",
+          "typicalDbm": -75.5,
+          "throughput": [
+            [
+              82,
+              104
+            ],
+            [
+              83,
+              138
+            ],
+            [
+              84,
+              180
+            ],
+            [
+              85,
+              244
+            ]
+          ]
+        },
+        {
+          "modulation": "256QAM",
+          "typicalDbm": -72.5,
+          "throughput": [
+            [
+              92,
+              116
+            ],
+            [
+              93,
+              154
+            ],
+            [
+              94,
+              201
+            ],
+            [
+              95,
+              273
+            ]
+          ]
+        },
+        {
+          "modulation": "512QAM",
+          "typicalDbm": -69.0,
+          "throughput": [
+            [
+              102,
+              129
+            ],
+            [
+              103,
+              171
+            ],
+            [
+              104,
+              224
+            ],
+            [
+              106,
+              303
+            ]
+          ]
+        },
+        {
+          "modulation": "1024QAM",
+          "typicalDbm": -66.0,
+          "throughput": [
+            [
+              112,
+              142
+            ],
+            [
+              113,
+              188
+            ],
+            [
+              114,
+              245
+            ],
+            [
+              116,
+              332
+            ]
+          ]
+        },
+        {
+          "modulation": "2048QAM",
+          "typicalDbm": -63.0,
+          "throughput": [
+            [
+              121,
+              154
+            ],
+            [
+              123,
+              203
+            ],
+            [
+              124,
+              266
+            ],
+            [
+              126,
+              360
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xmc3e-8-14-off",
+      "bandGHz": 8,
+      "bandwidthMHz": 14,
+      "xpic": false,
+      "capacityTable": "1-61",
+      "sensitivityTables": [
+        "1-169",
+        "1-170"
+      ],
+      "rows": [
+        {
+          "modulation": "QPSK Strong",
+          "typicalDbm": -94.0,
+          "throughput": [
+            [
+              18,
+              23
+            ],
+            [
+              18,
+              30
+            ],
+            [
+              18,
+              40
+            ],
+            [
+              19,
+              54
+            ]
+          ]
+        },
+        {
+          "modulation": "QPSK",
+          "typicalDbm": -92.0,
+          "throughput": [
+            [
+              21,
+              27
+            ],
+            [
+              21,
+              36
+            ],
+            [
+              22,
+              47
+            ],
+            [
+              22,
+              63
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM Strong",
+          "typicalDbm": -86.5,
+          "throughput": [
+            [
+              37,
+              47
+            ],
+            [
+              38,
+              62
+            ],
+            [
+              38,
+              82
+            ],
+            [
+              39,
+              111
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM",
+          "typicalDbm": -84.5,
+          "throughput": [
+            [
+              44,
+              55
+            ],
+            [
+              44,
+              73
+            ],
+            [
+              44,
+              96
+            ],
+            [
+              45,
+              130
+            ]
+          ]
+        },
+        {
+          "modulation": "32QAM",
+          "typicalDbm": -81.5,
+          "throughput": [
+            [
+              55,
+              70
+            ],
+            [
+              55,
+              92
+            ],
+            [
+              56,
+              120
+            ],
+            [
+              57,
+              163
+            ]
+          ]
+        },
+        {
+          "modulation": "64QAM",
+          "typicalDbm": -78.5,
+          "throughput": [
+            [
+              69,
+              88
+            ],
+            [
+              70,
+              116
+            ],
+            [
+              71,
+              152
+            ],
+            [
+              72,
+              206
+            ]
+          ]
+        },
+        {
+          "modulation": "128QAM",
+          "typicalDbm": -75.5,
+          "throughput": [
+            [
+              82,
+              104
+            ],
+            [
+              83,
+              138
+            ],
+            [
+              84,
+              180
+            ],
+            [
+              85,
+              244
+            ]
+          ]
+        },
+        {
+          "modulation": "256QAM",
+          "typicalDbm": -72.5,
+          "throughput": [
+            [
+              92,
+              116
+            ],
+            [
+              93,
+              154
+            ],
+            [
+              94,
+              201
+            ],
+            [
+              95,
+              273
+            ]
+          ]
+        },
+        {
+          "modulation": "512QAM",
+          "typicalDbm": -69.0,
+          "throughput": [
+            [
+              102,
+              129
+            ],
+            [
+              103,
+              171
+            ],
+            [
+              104,
+              224
+            ],
+            [
+              106,
+              303
+            ]
+          ]
+        },
+        {
+          "modulation": "1024QAM",
+          "typicalDbm": -66.0,
+          "throughput": [
+            [
+              112,
+              142
+            ],
+            [
+              113,
+              188
+            ],
+            [
+              114,
+              245
+            ],
+            [
+              116,
+              332
+            ]
+          ]
+        },
+        {
+          "modulation": "2048QAM",
+          "typicalDbm": -63.0,
+          "throughput": [
+            [
+              121,
+              154
+            ],
+            [
+              123,
+              203
+            ],
+            [
+              124,
+              266
+            ],
+            [
+              126,
+              360
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xmc3e-7-28-off",
+      "bandGHz": 7,
+      "bandwidthMHz": 28,
+      "xpic": false,
+      "capacityTable": "1-61",
+      "sensitivityTables": [
+        "1-171",
+        "1-172"
+      ],
+      "rows": [
+        {
+          "modulation": "QPSK Strong",
+          "typicalDbm": -90.5,
+          "throughput": [
+            [
+              37,
+              47
+            ],
+            [
+              38,
+              63
+            ],
+            [
+              38,
+              82
+            ],
+            [
+              39,
+              111
+            ]
+          ]
+        },
+        {
+          "modulation": "QPSK",
+          "typicalDbm": -89.0,
+          "throughput": [
+            [
+              44,
+              55
+            ],
+            [
+              44,
+              73
+            ],
+            [
+              45,
+              96
+            ],
+            [
+              45,
+              130
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM Strong",
+          "typicalDbm": -83.5,
+          "throughput": [
+            [
+              76,
+              96
+            ],
+            [
+              77,
+              127
+            ],
+            [
+              78,
+              166
+            ],
+            [
+              79,
+              226
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM",
+          "typicalDbm": -82.0,
+          "throughput": [
+            [
+              89,
+              113
+            ],
+            [
+              90,
+              149
+            ],
+            [
+              91,
+              195
+            ],
+            [
+              92,
+              264
+            ]
+          ]
+        },
+        {
+          "modulation": "32QAM",
+          "typicalDbm": -79.0,
+          "throughput": [
+            [
+              111,
+              141
+            ],
+            [
+              113,
+              187
+            ],
+            [
+              114,
+              244
+            ],
+            [
+              116,
+              331
+            ]
+          ]
+        },
+        {
+          "modulation": "64QAM",
+          "typicalDbm": -75.5,
+          "throughput": [
+            [
+              140,
+              178
+            ],
+            [
+              142,
+              235
+            ],
+            [
+              143,
+              307
+            ],
+            [
+              146,
+              416
+            ]
+          ]
+        },
+        {
+          "modulation": "128QAM",
+          "typicalDbm": -72.5,
+          "throughput": [
+            [
+              166,
+              211
+            ],
+            [
+              168,
+              278
+            ],
+            [
+              170,
+              364
+            ],
+            [
+              172,
+              493
+            ]
+          ]
+        },
+        {
+          "modulation": "256QAM",
+          "typicalDbm": -69.5,
+          "throughput": [
+            [
+              186,
+              236
+            ],
+            [
+              188,
+              311
+            ],
+            [
+              190,
+              407
+            ],
+            [
+              193,
+              551
+            ]
+          ]
+        },
+        {
+          "modulation": "512QAM",
+          "typicalDbm": -66.0,
+          "throughput": [
+            [
+              208,
+              263
+            ],
+            [
+              210,
+              348
+            ],
+            [
+              212,
+              455
+            ],
+            [
+              216,
+              616
+            ]
+          ]
+        },
+        {
+          "modulation": "1024QAM",
+          "typicalDbm": -63.0,
+          "throughput": [
+            [
+              229,
+              290
+            ],
+            [
+              231,
+              383
+            ],
+            [
+              234,
+              501
+            ],
+            [
+              237,
+              678
+            ]
+          ]
+        },
+        {
+          "modulation": "2048QAM",
+          "typicalDbm": -60.0,
+          "throughput": [
+            [
+              252,
+              319
+            ],
+            [
+              254,
+              421
+            ],
+            [
+              257,
+              551
+            ],
+            [
+              261,
+              746
+            ]
+          ]
+        },
+        {
+          "modulation": "4096QAM",
+          "typicalDbm": -57.0,
+          "throughput": [
+            [
+              266,
+              337
+            ],
+            [
+              269,
+              445
+            ],
+            [
+              271,
+              582
+            ],
+            [
+              276,
+              788
+            ]
+          ]
+        },
+        {
+          "modulation": "8192QAM",
+          "typicalDbm": -54.0,
+          "throughput": [
+            [
+              285,
+              361
+            ],
+            [
+              288,
+              476
+            ],
+            [
+              290,
+              622
+            ],
+            [
+              295,
+              843
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xmc3e-8-28-off",
+      "bandGHz": 8,
+      "bandwidthMHz": 28,
+      "xpic": false,
+      "capacityTable": "1-61",
+      "sensitivityTables": [
+        "1-171",
+        "1-172"
+      ],
+      "rows": [
+        {
+          "modulation": "QPSK Strong",
+          "typicalDbm": -90.5,
+          "throughput": [
+            [
+              37,
+              47
+            ],
+            [
+              38,
+              63
+            ],
+            [
+              38,
+              82
+            ],
+            [
+              39,
+              111
+            ]
+          ]
+        },
+        {
+          "modulation": "QPSK",
+          "typicalDbm": -89.0,
+          "throughput": [
+            [
+              44,
+              55
+            ],
+            [
+              44,
+              73
+            ],
+            [
+              45,
+              96
+            ],
+            [
+              45,
+              130
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM Strong",
+          "typicalDbm": -83.5,
+          "throughput": [
+            [
+              76,
+              96
+            ],
+            [
+              77,
+              127
+            ],
+            [
+              78,
+              166
+            ],
+            [
+              79,
+              226
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM",
+          "typicalDbm": -82.0,
+          "throughput": [
+            [
+              89,
+              113
+            ],
+            [
+              90,
+              149
+            ],
+            [
+              91,
+              195
+            ],
+            [
+              92,
+              264
+            ]
+          ]
+        },
+        {
+          "modulation": "32QAM",
+          "typicalDbm": -79.0,
+          "throughput": [
+            [
+              111,
+              141
+            ],
+            [
+              113,
+              187
+            ],
+            [
+              114,
+              244
+            ],
+            [
+              116,
+              331
+            ]
+          ]
+        },
+        {
+          "modulation": "64QAM",
+          "typicalDbm": -75.5,
+          "throughput": [
+            [
+              140,
+              178
+            ],
+            [
+              142,
+              235
+            ],
+            [
+              143,
+              307
+            ],
+            [
+              146,
+              416
+            ]
+          ]
+        },
+        {
+          "modulation": "128QAM",
+          "typicalDbm": -72.5,
+          "throughput": [
+            [
+              166,
+              211
+            ],
+            [
+              168,
+              278
+            ],
+            [
+              170,
+              364
+            ],
+            [
+              172,
+              493
+            ]
+          ]
+        },
+        {
+          "modulation": "256QAM",
+          "typicalDbm": -69.5,
+          "throughput": [
+            [
+              186,
+              236
+            ],
+            [
+              188,
+              311
+            ],
+            [
+              190,
+              407
+            ],
+            [
+              193,
+              551
+            ]
+          ]
+        },
+        {
+          "modulation": "512QAM",
+          "typicalDbm": -66.0,
+          "throughput": [
+            [
+              208,
+              263
+            ],
+            [
+              210,
+              348
+            ],
+            [
+              212,
+              455
+            ],
+            [
+              216,
+              616
+            ]
+          ]
+        },
+        {
+          "modulation": "1024QAM",
+          "typicalDbm": -63.0,
+          "throughput": [
+            [
+              229,
+              290
+            ],
+            [
+              231,
+              383
+            ],
+            [
+              234,
+              501
+            ],
+            [
+              237,
+              678
+            ]
+          ]
+        },
+        {
+          "modulation": "2048QAM",
+          "typicalDbm": -60.0,
+          "throughput": [
+            [
+              252,
+              319
+            ],
+            [
+              254,
+              421
+            ],
+            [
+              257,
+              551
+            ],
+            [
+              261,
+              746
+            ]
+          ]
+        },
+        {
+          "modulation": "4096QAM",
+          "typicalDbm": -57.0,
+          "throughput": [
+            [
+              266,
+              337
+            ],
+            [
+              269,
+              445
+            ],
+            [
+              271,
+              582
+            ],
+            [
+              276,
+              788
+            ]
+          ]
+        },
+        {
+          "modulation": "8192QAM",
+          "typicalDbm": -54.0,
+          "throughput": [
+            [
+              285,
+              361
+            ],
+            [
+              288,
+              476
+            ],
+            [
+              290,
+              622
+            ],
+            [
+              295,
+              843
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xmc3e-7-40-off",
+      "bandGHz": 7,
+      "bandwidthMHz": 40,
+      "xpic": false,
+      "capacityTable": "1-61",
+      "sensitivityTables": [
+        "1-173",
+        "1-174"
+      ],
+      "rows": [
+        {
+          "modulation": "QPSK Strong",
+          "typicalDbm": -89.0,
+          "throughput": [
+            [
+              54,
+              68
+            ],
+            [
+              54,
+              90
+            ],
+            [
+              55,
+              118
+            ],
+            [
+              56,
+              159
+            ]
+          ]
+        },
+        {
+          "modulation": "QPSK",
+          "typicalDbm": -87.5,
+          "throughput": [
+            [
+              63,
+              80
+            ],
+            [
+              63,
+              105
+            ],
+            [
+              64,
+              138
+            ],
+            [
+              65,
+              187
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM Strong",
+          "typicalDbm": -82.0,
+          "throughput": [
+            [
+              109,
+              138
+            ],
+            [
+              110,
+              182
+            ],
+            [
+              111,
+              238
+            ],
+            [
+              113,
+              323
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM",
+          "typicalDbm": -80.5,
+          "throughput": [
+            [
+              127,
+              161
+            ],
+            [
+              128,
+              213
+            ],
+            [
+              130,
+              278
+            ],
+            [
+              132,
+              377
+            ]
+          ]
+        },
+        {
+          "modulation": "32QAM",
+          "typicalDbm": -77.5,
+          "throughput": [
+            [
+              159,
+              202
+            ],
+            [
+              161,
+              267
+            ],
+            [
+              163,
+              348
+            ],
+            [
+              165,
+              472
+            ]
+          ]
+        },
+        {
+          "modulation": "64QAM",
+          "typicalDbm": -74.0,
+          "throughput": [
+            [
+              201,
+              254
+            ],
+            [
+              203,
+              336
+            ],
+            [
+              205,
+              439
+            ],
+            [
+              208,
+              594
+            ]
+          ]
+        },
+        {
+          "modulation": "128QAM",
+          "typicalDbm": -71.0,
+          "throughput": [
+            [
+              237,
+              301
+            ],
+            [
+              240,
+              397
+            ],
+            [
+              242,
+              519
+            ],
+            [
+              246,
+              703
+            ]
+          ]
+        },
+        {
+          "modulation": "256QAM",
+          "typicalDbm": -68.0,
+          "throughput": [
+            [
+              265,
+              336
+            ],
+            [
+              268,
+              444
+            ],
+            [
+              271,
+              580
+            ],
+            [
+              275,
+              786
+            ]
+          ]
+        },
+        {
+          "modulation": "512QAM",
+          "typicalDbm": -65.0,
+          "throughput": [
+            [
+              297,
+              376
+            ],
+            [
+              300,
+              496
+            ],
+            [
+              303,
+              649
+            ],
+            [
+              308,
+              879
+            ]
+          ]
+        },
+        {
+          "modulation": "1024QAM",
+          "typicalDbm": -61.5,
+          "throughput": [
+            [
+              327,
+              414
+            ],
+            [
+              330,
+              546
+            ],
+            [
+              333,
+              714
+            ],
+            [
+              339,
+              967
+            ]
+          ]
+        },
+        {
+          "modulation": "2048QAM",
+          "typicalDbm": -58.5,
+          "throughput": [
+            [
+              359,
+              455
+            ],
+            [
+              363,
+              601
+            ],
+            [
+              367,
+              786
+            ],
+            [
+              373,
+              1064
+            ]
+          ]
+        },
+        {
+          "modulation": "4096QAM",
+          "typicalDbm": -55.5,
+          "throughput": [
+            [
+              381,
+              483
+            ],
+            [
+              385,
+              637
+            ],
+            [
+              389,
+              833
+            ],
+            [
+              395,
+              1128
+            ]
+          ]
+        },
+        {
+          "modulation": "8192QAM",
+          "typicalDbm": -52.5,
+          "throughput": [
+            [
+              406,
+              514
+            ],
+            [
+              410,
+              679
+            ],
+            [
+              414,
+              887
+            ],
+            [
+              421,
+              1202
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xmc3e-8-40-off",
+      "bandGHz": 8,
+      "bandwidthMHz": 40,
+      "xpic": false,
+      "capacityTable": "1-61",
+      "sensitivityTables": [
+        "1-173",
+        "1-174"
+      ],
+      "rows": [
+        {
+          "modulation": "QPSK Strong",
+          "typicalDbm": -89.0,
+          "throughput": [
+            [
+              54,
+              68
+            ],
+            [
+              54,
+              90
+            ],
+            [
+              55,
+              118
+            ],
+            [
+              56,
+              159
+            ]
+          ]
+        },
+        {
+          "modulation": "QPSK",
+          "typicalDbm": -87.5,
+          "throughput": [
+            [
+              63,
+              80
+            ],
+            [
+              63,
+              105
+            ],
+            [
+              64,
+              138
+            ],
+            [
+              65,
+              187
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM Strong",
+          "typicalDbm": -82.0,
+          "throughput": [
+            [
+              109,
+              138
+            ],
+            [
+              110,
+              182
+            ],
+            [
+              111,
+              238
+            ],
+            [
+              113,
+              323
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM",
+          "typicalDbm": -80.5,
+          "throughput": [
+            [
+              127,
+              161
+            ],
+            [
+              128,
+              213
+            ],
+            [
+              130,
+              278
+            ],
+            [
+              132,
+              377
+            ]
+          ]
+        },
+        {
+          "modulation": "32QAM",
+          "typicalDbm": -77.5,
+          "throughput": [
+            [
+              159,
+              202
+            ],
+            [
+              161,
+              267
+            ],
+            [
+              163,
+              348
+            ],
+            [
+              165,
+              472
+            ]
+          ]
+        },
+        {
+          "modulation": "64QAM",
+          "typicalDbm": -74.0,
+          "throughput": [
+            [
+              201,
+              254
+            ],
+            [
+              203,
+              336
+            ],
+            [
+              205,
+              439
+            ],
+            [
+              208,
+              594
+            ]
+          ]
+        },
+        {
+          "modulation": "128QAM",
+          "typicalDbm": -71.0,
+          "throughput": [
+            [
+              237,
+              301
+            ],
+            [
+              240,
+              397
+            ],
+            [
+              242,
+              519
+            ],
+            [
+              246,
+              703
+            ]
+          ]
+        },
+        {
+          "modulation": "256QAM",
+          "typicalDbm": -68.0,
+          "throughput": [
+            [
+              265,
+              336
+            ],
+            [
+              268,
+              444
+            ],
+            [
+              271,
+              580
+            ],
+            [
+              275,
+              786
+            ]
+          ]
+        },
+        {
+          "modulation": "512QAM",
+          "typicalDbm": -65.0,
+          "throughput": [
+            [
+              297,
+              376
+            ],
+            [
+              300,
+              496
+            ],
+            [
+              303,
+              649
+            ],
+            [
+              308,
+              879
+            ]
+          ]
+        },
+        {
+          "modulation": "1024QAM",
+          "typicalDbm": -61.5,
+          "throughput": [
+            [
+              327,
+              414
+            ],
+            [
+              330,
+              546
+            ],
+            [
+              333,
+              714
+            ],
+            [
+              339,
+              967
+            ]
+          ]
+        },
+        {
+          "modulation": "2048QAM",
+          "typicalDbm": -58.5,
+          "throughput": [
+            [
+              359,
+              455
+            ],
+            [
+              363,
+              601
+            ],
+            [
+              367,
+              786
+            ],
+            [
+              373,
+              1064
+            ]
+          ]
+        },
+        {
+          "modulation": "4096QAM",
+          "typicalDbm": -55.5,
+          "throughput": [
+            [
+              381,
+              483
+            ],
+            [
+              385,
+              637
+            ],
+            [
+              389,
+              833
+            ],
+            [
+              395,
+              1128
+            ]
+          ]
+        },
+        {
+          "modulation": "8192QAM",
+          "typicalDbm": -52.5,
+          "throughput": [
+            [
+              406,
+              514
+            ],
+            [
+              410,
+              679
+            ],
+            [
+              414,
+              887
+            ],
+            [
+              421,
+              1202
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xmc3e-7-56-off",
+      "bandGHz": 7,
+      "bandwidthMHz": 56,
+      "xpic": false,
+      "capacityTable": "1-61",
+      "sensitivityTables": [
+        "1-175",
+        "1-176"
+      ],
+      "rows": [
+        {
+          "modulation": "QPSK Strong",
+          "typicalDbm": -87.5,
+          "throughput": [
+            [
+              76,
+              97
+            ],
+            [
+              77,
+              128
+            ],
+            [
+              78,
+              167
+            ],
+            [
+              79,
+              226
+            ]
+          ]
+        },
+        {
+          "modulation": "QPSK",
+          "typicalDbm": -86.0,
+          "throughput": [
+            [
+              89,
+              113
+            ],
+            [
+              90,
+              149
+            ],
+            [
+              91,
+              195
+            ],
+            [
+              92,
+              264
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM Strong",
+          "typicalDbm": -80.5,
+          "throughput": [
+            [
+              154,
+              195
+            ],
+            [
+              156,
+              258
+            ],
+            [
+              157,
+              337
+            ],
+            [
+              160,
+              456
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM",
+          "typicalDbm": -79.0,
+          "throughput": [
+            [
+              180,
+              228
+            ],
+            [
+              182,
+              301
+            ],
+            [
+              184,
+              394
+            ],
+            [
+              187,
+              533
+            ]
+          ]
+        },
+        {
+          "modulation": "32QAM",
+          "typicalDbm": -76.0,
+          "throughput": [
+            [
+              225,
+              286
+            ],
+            [
+              228,
+              377
+            ],
+            [
+              230,
+              493
+            ],
+            [
+              234,
+              668
+            ]
+          ]
+        },
+        {
+          "modulation": "64QAM",
+          "typicalDbm": -72.5,
+          "throughput": [
+            [
+              284,
+              360
+            ],
+            [
+              287,
+              475
+            ],
+            [
+              290,
+              620
+            ],
+            [
+              294,
+              840
+            ]
+          ]
+        },
+        {
+          "modulation": "128QAM",
+          "typicalDbm": -69.5,
+          "throughput": [
+            [
+              336,
+              425
+            ],
+            [
+              339,
+              561
+            ],
+            [
+              343,
+              734
+            ],
+            [
+              348,
+              994
+            ]
+          ]
+        },
+        {
+          "modulation": "256QAM",
+          "typicalDbm": -66.5,
+          "throughput": [
+            [
+              375,
+              475
+            ],
+            [
+              379,
+              628
+            ],
+            [
+              383,
+              820
+            ],
+            [
+              389,
+              1111
+            ]
+          ]
+        },
+        {
+          "modulation": "512QAM",
+          "typicalDbm": -63.0,
+          "throughput": [
+            [
+              419,
+              531
+            ],
+            [
+              424,
+              701
+            ],
+            [
+              428,
+              916
+            ],
+            [
+              435,
+              1241
+            ]
+          ]
+        },
+        {
+          "modulation": "1024QAM",
+          "typicalDbm": -60.0,
+          "throughput": [
+            [
+              461,
+              585
+            ],
+            [
+              466,
+              772
+            ],
+            [
+              471,
+              1009
+            ],
+            [
+              479,
+              1366
+            ]
+          ]
+        },
+        {
+          "modulation": "2048QAM",
+          "typicalDbm": -57.0,
+          "throughput": [
+            [
+              492,
+              624
+            ],
+            [
+              497,
+              823
+            ],
+            [
+              502,
+              1076
+            ],
+            [
+              510,
+              1457
+            ]
+          ]
+        },
+        {
+          "modulation": "4096QAM",
+          "typicalDbm": -54.0,
+          "throughput": [
+            [
+              538,
+              682
+            ],
+            [
+              544,
+              901
+            ],
+            [
+              549,
+              1177
+            ],
+            [
+              558,
+              1594
+            ]
+          ]
+        },
+        {
+          "modulation": "8192QAM",
+          "typicalDbm": -51.0,
+          "throughput": [
+            [
+              566,
+              717
+            ],
+            [
+              572,
+              947
+            ],
+            [
+              578,
+              1237
+            ],
+            [
+              587,
+              1676
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xmc3e-8-56-off",
+      "bandGHz": 8,
+      "bandwidthMHz": 56,
+      "xpic": false,
+      "capacityTable": "1-61",
+      "sensitivityTables": [
+        "1-175",
+        "1-176"
+      ],
+      "rows": [
+        {
+          "modulation": "QPSK Strong",
+          "typicalDbm": -87.5,
+          "throughput": [
+            [
+              76,
+              97
+            ],
+            [
+              77,
+              128
+            ],
+            [
+              78,
+              167
+            ],
+            [
+              79,
+              226
+            ]
+          ]
+        },
+        {
+          "modulation": "QPSK",
+          "typicalDbm": -86.0,
+          "throughput": [
+            [
+              89,
+              113
+            ],
+            [
+              90,
+              149
+            ],
+            [
+              91,
+              195
+            ],
+            [
+              92,
+              264
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM Strong",
+          "typicalDbm": -80.5,
+          "throughput": [
+            [
+              154,
+              195
+            ],
+            [
+              156,
+              258
+            ],
+            [
+              157,
+              337
+            ],
+            [
+              160,
+              456
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM",
+          "typicalDbm": -79.0,
+          "throughput": [
+            [
+              180,
+              228
+            ],
+            [
+              182,
+              301
+            ],
+            [
+              184,
+              394
+            ],
+            [
+              187,
+              533
+            ]
+          ]
+        },
+        {
+          "modulation": "32QAM",
+          "typicalDbm": -76.0,
+          "throughput": [
+            [
+              225,
+              286
+            ],
+            [
+              228,
+              377
+            ],
+            [
+              230,
+              493
+            ],
+            [
+              234,
+              668
+            ]
+          ]
+        },
+        {
+          "modulation": "64QAM",
+          "typicalDbm": -72.5,
+          "throughput": [
+            [
+              284,
+              360
+            ],
+            [
+              287,
+              475
+            ],
+            [
+              290,
+              620
+            ],
+            [
+              294,
+              840
+            ]
+          ]
+        },
+        {
+          "modulation": "128QAM",
+          "typicalDbm": -69.5,
+          "throughput": [
+            [
+              336,
+              425
+            ],
+            [
+              339,
+              561
+            ],
+            [
+              343,
+              734
+            ],
+            [
+              348,
+              994
+            ]
+          ]
+        },
+        {
+          "modulation": "256QAM",
+          "typicalDbm": -66.5,
+          "throughput": [
+            [
+              375,
+              475
+            ],
+            [
+              379,
+              628
+            ],
+            [
+              383,
+              820
+            ],
+            [
+              389,
+              1111
+            ]
+          ]
+        },
+        {
+          "modulation": "512QAM",
+          "typicalDbm": -63.0,
+          "throughput": [
+            [
+              419,
+              531
+            ],
+            [
+              424,
+              701
+            ],
+            [
+              428,
+              916
+            ],
+            [
+              435,
+              1241
+            ]
+          ]
+        },
+        {
+          "modulation": "1024QAM",
+          "typicalDbm": -60.0,
+          "throughput": [
+            [
+              461,
+              585
+            ],
+            [
+              466,
+              772
+            ],
+            [
+              471,
+              1009
+            ],
+            [
+              479,
+              1366
+            ]
+          ]
+        },
+        {
+          "modulation": "2048QAM",
+          "typicalDbm": -57.0,
+          "throughput": [
+            [
+              492,
+              624
+            ],
+            [
+              497,
+              823
+            ],
+            [
+              502,
+              1076
+            ],
+            [
+              510,
+              1457
+            ]
+          ]
+        },
+        {
+          "modulation": "4096QAM",
+          "typicalDbm": -54.0,
+          "throughput": [
+            [
+              538,
+              682
+            ],
+            [
+              544,
+              901
+            ],
+            [
+              549,
+              1177
+            ],
+            [
+              558,
+              1594
+            ]
+          ]
+        },
+        {
+          "modulation": "8192QAM",
+          "typicalDbm": -51.0,
+          "throughput": [
+            [
+              566,
+              717
+            ],
+            [
+              572,
+              947
+            ],
+            [
+              578,
+              1237
+            ],
+            [
+              587,
+              1676
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xmc3e-7-7-on",
+      "bandGHz": 7,
+      "bandwidthMHz": 7,
+      "xpic": true,
+      "capacityTable": "1-65",
+      "sensitivityTables": [
+        "1-188",
+        "1-189"
+      ],
+      "rows": [
+        {
+          "modulation": "QPSK Strong",
+          "typicalDbm": -96.0,
+          "throughput": [
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              14
+            ],
+            [
+              9,
+              19
+            ],
+            [
+              9,
+              26
+            ]
+          ]
+        },
+        {
+          "modulation": "QPSK",
+          "typicalDbm": -94.0,
+          "throughput": [
+            [
+              10,
+              13
+            ],
+            [
+              10,
+              17
+            ],
+            [
+              10,
+              22
+            ],
+            [
+              10,
+              30
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM Strong",
+          "typicalDbm": -89.5,
+          "throughput": [
+            [
+              18,
+              23
+            ],
+            [
+              18,
+              30
+            ],
+            [
+              18,
+              39
+            ],
+            [
+              18,
+              53
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM",
+          "typicalDbm": -87.5,
+          "throughput": [
+            [
+              21,
+              27
+            ],
+            [
+              21,
+              35
+            ],
+            [
+              21,
+              46
+            ],
+            [
+              22,
+              63
+            ]
+          ]
+        },
+        {
+          "modulation": "32QAM",
+          "typicalDbm": -84.5,
+          "throughput": [
+            [
+              26,
+              34
+            ],
+            [
+              27,
+              44
+            ],
+            [
+              27,
+              58
+            ],
+            [
+              27,
+              79
+            ]
+          ]
+        },
+        {
+          "modulation": "64QAM",
+          "typicalDbm": -81.5,
+          "throughput": [
+            [
+              34,
+              43
+            ],
+            [
+              34,
+              56
+            ],
+            [
+              34,
+              74
+            ],
+            [
+              35,
+              100
+            ]
+          ]
+        },
+        {
+          "modulation": "128QAM",
+          "typicalDbm": -78.5,
+          "throughput": [
+            [
+              39,
+              50
+            ],
+            [
+              40,
+              66
+            ],
+            [
+              40,
+              87
+            ],
+            [
+              41,
+              118
+            ]
+          ]
+        },
+        {
+          "modulation": "256QAM",
+          "typicalDbm": -75.5,
+          "throughput": [
+            [
+              44,
+              56
+            ],
+            [
+              44,
+              73
+            ],
+            [
+              45,
+              96
+            ],
+            [
+              45,
+              130
+            ]
+          ]
+        },
+        {
+          "modulation": "512QAM",
+          "typicalDbm": -72.0,
+          "throughput": [
+            [
+              49,
+              62
+            ],
+            [
+              49,
+              82
+            ],
+            [
+              50,
+              107
+            ],
+            [
+              51,
+              146
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xmc3e-8-7-on",
+      "bandGHz": 8,
+      "bandwidthMHz": 7,
+      "xpic": true,
+      "capacityTable": "1-65",
+      "sensitivityTables": [
+        "1-188",
+        "1-189"
+      ],
+      "rows": [
+        {
+          "modulation": "QPSK Strong",
+          "typicalDbm": -96.0,
+          "throughput": [
+            [
+              8,
+              11
+            ],
+            [
+              9,
+              14
+            ],
+            [
+              9,
+              19
+            ],
+            [
+              9,
+              26
+            ]
+          ]
+        },
+        {
+          "modulation": "QPSK",
+          "typicalDbm": -94.0,
+          "throughput": [
+            [
+              10,
+              13
+            ],
+            [
+              10,
+              17
+            ],
+            [
+              10,
+              22
+            ],
+            [
+              10,
+              30
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM Strong",
+          "typicalDbm": -89.5,
+          "throughput": [
+            [
+              18,
+              23
+            ],
+            [
+              18,
+              30
+            ],
+            [
+              18,
+              39
+            ],
+            [
+              18,
+              53
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM",
+          "typicalDbm": -87.5,
+          "throughput": [
+            [
+              21,
+              27
+            ],
+            [
+              21,
+              35
+            ],
+            [
+              21,
+              46
+            ],
+            [
+              22,
+              63
+            ]
+          ]
+        },
+        {
+          "modulation": "32QAM",
+          "typicalDbm": -84.5,
+          "throughput": [
+            [
+              26,
+              34
+            ],
+            [
+              27,
+              44
+            ],
+            [
+              27,
+              58
+            ],
+            [
+              27,
+              79
+            ]
+          ]
+        },
+        {
+          "modulation": "64QAM",
+          "typicalDbm": -81.5,
+          "throughput": [
+            [
+              34,
+              43
+            ],
+            [
+              34,
+              56
+            ],
+            [
+              34,
+              74
+            ],
+            [
+              35,
+              100
+            ]
+          ]
+        },
+        {
+          "modulation": "128QAM",
+          "typicalDbm": -78.5,
+          "throughput": [
+            [
+              39,
+              50
+            ],
+            [
+              40,
+              66
+            ],
+            [
+              40,
+              87
+            ],
+            [
+              41,
+              118
+            ]
+          ]
+        },
+        {
+          "modulation": "256QAM",
+          "typicalDbm": -75.5,
+          "throughput": [
+            [
+              44,
+              56
+            ],
+            [
+              44,
+              73
+            ],
+            [
+              45,
+              96
+            ],
+            [
+              45,
+              130
+            ]
+          ]
+        },
+        {
+          "modulation": "512QAM",
+          "typicalDbm": -72.0,
+          "throughput": [
+            [
+              49,
+              62
+            ],
+            [
+              49,
+              82
+            ],
+            [
+              50,
+              107
+            ],
+            [
+              51,
+              146
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xmc3e-7-14-on",
+      "bandGHz": 7,
+      "bandwidthMHz": 14,
+      "xpic": true,
+      "capacityTable": "1-65",
+      "sensitivityTables": [
+        "1-190",
+        "1-191"
+      ],
+      "rows": [
+        {
+          "modulation": "QPSK Strong",
+          "typicalDbm": -94.0,
+          "throughput": [
+            [
+              18,
+              23
+            ],
+            [
+              18,
+              30
+            ],
+            [
+              18,
+              40
+            ],
+            [
+              19,
+              54
+            ]
+          ]
+        },
+        {
+          "modulation": "QPSK",
+          "typicalDbm": -92.0,
+          "throughput": [
+            [
+              21,
+              27
+            ],
+            [
+              21,
+              35
+            ],
+            [
+              21,
+              46
+            ],
+            [
+              22,
+              63
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM Strong",
+          "typicalDbm": -86.5,
+          "throughput": [
+            [
+              37,
+              47
+            ],
+            [
+              37,
+              62
+            ],
+            [
+              38,
+              81
+            ],
+            [
+              38,
+              110
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM",
+          "typicalDbm": -84.5,
+          "throughput": [
+            [
+              43,
+              55
+            ],
+            [
+              44,
+              73
+            ],
+            [
+              44,
+              95
+            ],
+            [
+              45,
+              129
+            ]
+          ]
+        },
+        {
+          "modulation": "32QAM",
+          "typicalDbm": -81.5,
+          "throughput": [
+            [
+              55,
+              69
+            ],
+            [
+              55,
+              92
+            ],
+            [
+              56,
+              120
+            ],
+            [
+              57,
+              163
+            ]
+          ]
+        },
+        {
+          "modulation": "64QAM",
+          "typicalDbm": -78.5,
+          "throughput": [
+            [
+              69,
+              88
+            ],
+            [
+              70,
+              116
+            ],
+            [
+              71,
+              151
+            ],
+            [
+              72,
+              205
+            ]
+          ]
+        },
+        {
+          "modulation": "128QAM",
+          "typicalDbm": -75.5,
+          "throughput": [
+            [
+              82,
+              104
+            ],
+            [
+              83,
+              137
+            ],
+            [
+              84,
+              179
+            ],
+            [
+              85,
+              243
+            ]
+          ]
+        },
+        {
+          "modulation": "256QAM",
+          "typicalDbm": -72.5,
+          "throughput": [
+            [
+              91,
+              115
+            ],
+            [
+              92,
+              152
+            ],
+            [
+              93,
+              199
+            ],
+            [
+              94,
+              269
+            ]
+          ]
+        },
+        {
+          "modulation": "512QAM",
+          "typicalDbm": -69.0,
+          "throughput": [
+            [
+              101,
+              128
+            ],
+            [
+              102,
+              169
+            ],
+            [
+              103,
+              221
+            ],
+            [
+              105,
+              300
+            ]
+          ]
+        },
+        {
+          "modulation": "1024QAM",
+          "typicalDbm": -66.0,
+          "throughput": [
+            [
+              110,
+              139
+            ],
+            [
+              111,
+              184
+            ],
+            [
+              112,
+              240
+            ],
+            [
+              114,
+              325
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xmc3e-8-14-on",
+      "bandGHz": 8,
+      "bandwidthMHz": 14,
+      "xpic": true,
+      "capacityTable": "1-65",
+      "sensitivityTables": [
+        "1-190",
+        "1-191"
+      ],
+      "rows": [
+        {
+          "modulation": "QPSK Strong",
+          "typicalDbm": -94.0,
+          "throughput": [
+            [
+              18,
+              23
+            ],
+            [
+              18,
+              30
+            ],
+            [
+              18,
+              40
+            ],
+            [
+              19,
+              54
+            ]
+          ]
+        },
+        {
+          "modulation": "QPSK",
+          "typicalDbm": -92.0,
+          "throughput": [
+            [
+              21,
+              27
+            ],
+            [
+              21,
+              35
+            ],
+            [
+              21,
+              46
+            ],
+            [
+              22,
+              63
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM Strong",
+          "typicalDbm": -86.5,
+          "throughput": [
+            [
+              37,
+              47
+            ],
+            [
+              37,
+              62
+            ],
+            [
+              38,
+              81
+            ],
+            [
+              38,
+              110
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM",
+          "typicalDbm": -84.5,
+          "throughput": [
+            [
+              43,
+              55
+            ],
+            [
+              44,
+              73
+            ],
+            [
+              44,
+              95
+            ],
+            [
+              45,
+              129
+            ]
+          ]
+        },
+        {
+          "modulation": "32QAM",
+          "typicalDbm": -81.5,
+          "throughput": [
+            [
+              55,
+              69
+            ],
+            [
+              55,
+              92
+            ],
+            [
+              56,
+              120
+            ],
+            [
+              57,
+              163
+            ]
+          ]
+        },
+        {
+          "modulation": "64QAM",
+          "typicalDbm": -78.5,
+          "throughput": [
+            [
+              69,
+              88
+            ],
+            [
+              70,
+              116
+            ],
+            [
+              71,
+              151
+            ],
+            [
+              72,
+              205
+            ]
+          ]
+        },
+        {
+          "modulation": "128QAM",
+          "typicalDbm": -75.5,
+          "throughput": [
+            [
+              82,
+              104
+            ],
+            [
+              83,
+              137
+            ],
+            [
+              84,
+              179
+            ],
+            [
+              85,
+              243
+            ]
+          ]
+        },
+        {
+          "modulation": "256QAM",
+          "typicalDbm": -72.5,
+          "throughput": [
+            [
+              91,
+              115
+            ],
+            [
+              92,
+              152
+            ],
+            [
+              93,
+              199
+            ],
+            [
+              94,
+              269
+            ]
+          ]
+        },
+        {
+          "modulation": "512QAM",
+          "typicalDbm": -69.0,
+          "throughput": [
+            [
+              101,
+              128
+            ],
+            [
+              102,
+              169
+            ],
+            [
+              103,
+              221
+            ],
+            [
+              105,
+              300
+            ]
+          ]
+        },
+        {
+          "modulation": "1024QAM",
+          "typicalDbm": -66.0,
+          "throughput": [
+            [
+              110,
+              139
+            ],
+            [
+              111,
+              184
+            ],
+            [
+              112,
+              240
+            ],
+            [
+              114,
+              325
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xmc3e-7-28-on",
+      "bandGHz": 7,
+      "bandwidthMHz": 28,
+      "xpic": true,
+      "capacityTable": "1-65",
+      "sensitivityTables": [
+        "1-192",
+        "1-193"
+      ],
+      "rows": [
+        {
+          "modulation": "QPSK Strong",
+          "typicalDbm": -90.5,
+          "throughput": [
+            [
+              37,
+              47
+            ],
+            [
+              38,
+              63
+            ],
+            [
+              38,
+              82
+            ],
+            [
+              39,
+              111
+            ]
+          ]
+        },
+        {
+          "modulation": "QPSK",
+          "typicalDbm": -89.0,
+          "throughput": [
+            [
+              44,
+              55
+            ],
+            [
+              44,
+              73
+            ],
+            [
+              45,
+              96
+            ],
+            [
+              45,
+              130
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM Strong",
+          "typicalDbm": -83.5,
+          "throughput": [
+            [
+              76,
+              96
+            ],
+            [
+              77,
+              127
+            ],
+            [
+              77,
+              166
+            ],
+            [
+              79,
+              225
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM",
+          "typicalDbm": -82.0,
+          "throughput": [
+            [
+              89,
+              113
+            ],
+            [
+              90,
+              149
+            ],
+            [
+              91,
+              195
+            ],
+            [
+              92,
+              264
+            ]
+          ]
+        },
+        {
+          "modulation": "32QAM",
+          "typicalDbm": -79.0,
+          "throughput": [
+            [
+              111,
+              141
+            ],
+            [
+              113,
+              186
+            ],
+            [
+              114,
+              244
+            ],
+            [
+              116,
+              330
+            ]
+          ]
+        },
+        {
+          "modulation": "64QAM",
+          "typicalDbm": -75.5,
+          "throughput": [
+            [
+              140,
+              178
+            ],
+            [
+              142,
+              235
+            ],
+            [
+              143,
+              307
+            ],
+            [
+              146,
+              416
+            ]
+          ]
+        },
+        {
+          "modulation": "128QAM",
+          "typicalDbm": -72.5,
+          "throughput": [
+            [
+              166,
+              211
+            ],
+            [
+              168,
+              278
+            ],
+            [
+              170,
+              364
+            ],
+            [
+              172,
+              493
+            ]
+          ]
+        },
+        {
+          "modulation": "256QAM",
+          "typicalDbm": -69.5,
+          "throughput": [
+            [
+              186,
+              236
+            ],
+            [
+              188,
+              311
+            ],
+            [
+              190,
+              407
+            ],
+            [
+              193,
+              551
+            ]
+          ]
+        },
+        {
+          "modulation": "512QAM",
+          "typicalDbm": -66.0,
+          "throughput": [
+            [
+              206,
+              262
+            ],
+            [
+              209,
+              345
+            ],
+            [
+              211,
+              451
+            ],
+            [
+              214,
+              612
+            ]
+          ]
+        },
+        {
+          "modulation": "1024QAM",
+          "typicalDbm": -63.0,
+          "throughput": [
+            [
+              226,
+              287
+            ],
+            [
+              229,
+              379
+            ],
+            [
+              231,
+              495
+            ],
+            [
+              235,
+              671
+            ]
+          ]
+        },
+        {
+          "modulation": "2048QAM",
+          "typicalDbm": -60.0,
+          "throughput": [
+            [
+              247,
+              313
+            ],
+            [
+              249,
+              413
+            ],
+            [
+              252,
+              540
+            ],
+            [
+              256,
+              731
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xmc3e-8-28-on",
+      "bandGHz": 8,
+      "bandwidthMHz": 28,
+      "xpic": true,
+      "capacityTable": "1-65",
+      "sensitivityTables": [
+        "1-192",
+        "1-193"
+      ],
+      "rows": [
+        {
+          "modulation": "QPSK Strong",
+          "typicalDbm": -90.5,
+          "throughput": [
+            [
+              37,
+              47
+            ],
+            [
+              38,
+              63
+            ],
+            [
+              38,
+              82
+            ],
+            [
+              39,
+              111
+            ]
+          ]
+        },
+        {
+          "modulation": "QPSK",
+          "typicalDbm": -89.0,
+          "throughput": [
+            [
+              44,
+              55
+            ],
+            [
+              44,
+              73
+            ],
+            [
+              45,
+              96
+            ],
+            [
+              45,
+              130
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM Strong",
+          "typicalDbm": -83.5,
+          "throughput": [
+            [
+              76,
+              96
+            ],
+            [
+              77,
+              127
+            ],
+            [
+              77,
+              166
+            ],
+            [
+              79,
+              225
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM",
+          "typicalDbm": -82.0,
+          "throughput": [
+            [
+              89,
+              113
+            ],
+            [
+              90,
+              149
+            ],
+            [
+              91,
+              195
+            ],
+            [
+              92,
+              264
+            ]
+          ]
+        },
+        {
+          "modulation": "32QAM",
+          "typicalDbm": -79.0,
+          "throughput": [
+            [
+              111,
+              141
+            ],
+            [
+              113,
+              186
+            ],
+            [
+              114,
+              244
+            ],
+            [
+              116,
+              330
+            ]
+          ]
+        },
+        {
+          "modulation": "64QAM",
+          "typicalDbm": -75.5,
+          "throughput": [
+            [
+              140,
+              178
+            ],
+            [
+              142,
+              235
+            ],
+            [
+              143,
+              307
+            ],
+            [
+              146,
+              416
+            ]
+          ]
+        },
+        {
+          "modulation": "128QAM",
+          "typicalDbm": -72.5,
+          "throughput": [
+            [
+              166,
+              211
+            ],
+            [
+              168,
+              278
+            ],
+            [
+              170,
+              364
+            ],
+            [
+              172,
+              493
+            ]
+          ]
+        },
+        {
+          "modulation": "256QAM",
+          "typicalDbm": -69.5,
+          "throughput": [
+            [
+              186,
+              236
+            ],
+            [
+              188,
+              311
+            ],
+            [
+              190,
+              407
+            ],
+            [
+              193,
+              551
+            ]
+          ]
+        },
+        {
+          "modulation": "512QAM",
+          "typicalDbm": -66.0,
+          "throughput": [
+            [
+              206,
+              262
+            ],
+            [
+              209,
+              345
+            ],
+            [
+              211,
+              451
+            ],
+            [
+              214,
+              612
+            ]
+          ]
+        },
+        {
+          "modulation": "1024QAM",
+          "typicalDbm": -63.0,
+          "throughput": [
+            [
+              226,
+              287
+            ],
+            [
+              229,
+              379
+            ],
+            [
+              231,
+              495
+            ],
+            [
+              235,
+              671
+            ]
+          ]
+        },
+        {
+          "modulation": "2048QAM",
+          "typicalDbm": -60.0,
+          "throughput": [
+            [
+              247,
+              313
+            ],
+            [
+              249,
+              413
+            ],
+            [
+              252,
+              540
+            ],
+            [
+              256,
+              731
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xmc3e-7-40-on",
+      "bandGHz": 7,
+      "bandwidthMHz": 40,
+      "xpic": true,
+      "capacityTable": "1-65",
+      "sensitivityTables": [
+        "1-194",
+        "1-195"
+      ],
+      "rows": [
+        {
+          "modulation": "QPSK Strong",
+          "typicalDbm": -89.0,
+          "throughput": [
+            [
+              53,
+              68
+            ],
+            [
+              54,
+              90
+            ],
+            [
+              55,
+              117
+            ],
+            [
+              55,
+              159
+            ]
+          ]
+        },
+        {
+          "modulation": "QPSK",
+          "typicalDbm": -87.5,
+          "throughput": [
+            [
+              63,
+              79
+            ],
+            [
+              63,
+              105
+            ],
+            [
+              64,
+              137
+            ],
+            [
+              65,
+              186
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM Strong",
+          "typicalDbm": -82.0,
+          "throughput": [
+            [
+              109,
+              138
+            ],
+            [
+              110,
+              182
+            ],
+            [
+              111,
+              238
+            ],
+            [
+              113,
+              322
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM",
+          "typicalDbm": -80.5,
+          "throughput": [
+            [
+              127,
+              161
+            ],
+            [
+              128,
+              212
+            ],
+            [
+              130,
+              278
+            ],
+            [
+              132,
+              376
+            ]
+          ]
+        },
+        {
+          "modulation": "32QAM",
+          "typicalDbm": -77.5,
+          "throughput": [
+            [
+              159,
+              202
+            ],
+            [
+              161,
+              267
+            ],
+            [
+              163,
+              348
+            ],
+            [
+              165,
+              472
+            ]
+          ]
+        },
+        {
+          "modulation": "64QAM",
+          "typicalDbm": -74.0,
+          "throughput": [
+            [
+              200,
+              254
+            ],
+            [
+              202,
+              335
+            ],
+            [
+              204,
+              438
+            ],
+            [
+              208,
+              594
+            ]
+          ]
+        },
+        {
+          "modulation": "128QAM",
+          "typicalDbm": -71.0,
+          "throughput": [
+            [
+              237,
+              300
+            ],
+            [
+              240,
+              397
+            ],
+            [
+              242,
+              518
+            ],
+            [
+              246,
+              702
+            ]
+          ]
+        },
+        {
+          "modulation": "256QAM",
+          "typicalDbm": -68.0,
+          "throughput": [
+            [
+              265,
+              336
+            ],
+            [
+              268,
+              443
+            ],
+            [
+              270,
+              579
+            ],
+            [
+              275,
+              785
+            ]
+          ]
+        },
+        {
+          "modulation": "512QAM",
+          "typicalDbm": -65.0,
+          "throughput": [
+            [
+              295,
+              373
+            ],
+            [
+              298,
+              493
+            ],
+            [
+              301,
+              644
+            ],
+            [
+              306,
+              873
+            ]
+          ]
+        },
+        {
+          "modulation": "1024QAM",
+          "typicalDbm": -61.5,
+          "throughput": [
+            [
+              323,
+              410
+            ],
+            [
+              327,
+              541
+            ],
+            [
+              330,
+              707
+            ],
+            [
+              335,
+              957
+            ]
+          ]
+        },
+        {
+          "modulation": "2048QAM",
+          "typicalDbm": -58.5,
+          "throughput": [
+            [
+              352,
+              446
+            ],
+            [
+              356,
+              589
+            ],
+            [
+              359,
+              770
+            ],
+            [
+              365,
+              1043
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xmc3e-8-40-on",
+      "bandGHz": 8,
+      "bandwidthMHz": 40,
+      "xpic": true,
+      "capacityTable": "1-65",
+      "sensitivityTables": [
+        "1-194",
+        "1-195"
+      ],
+      "rows": [
+        {
+          "modulation": "QPSK Strong",
+          "typicalDbm": -89.0,
+          "throughput": [
+            [
+              53,
+              68
+            ],
+            [
+              54,
+              90
+            ],
+            [
+              55,
+              117
+            ],
+            [
+              55,
+              159
+            ]
+          ]
+        },
+        {
+          "modulation": "QPSK",
+          "typicalDbm": -87.5,
+          "throughput": [
+            [
+              63,
+              79
+            ],
+            [
+              63,
+              105
+            ],
+            [
+              64,
+              137
+            ],
+            [
+              65,
+              186
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM Strong",
+          "typicalDbm": -82.0,
+          "throughput": [
+            [
+              109,
+              138
+            ],
+            [
+              110,
+              182
+            ],
+            [
+              111,
+              238
+            ],
+            [
+              113,
+              322
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM",
+          "typicalDbm": -80.5,
+          "throughput": [
+            [
+              127,
+              161
+            ],
+            [
+              128,
+              212
+            ],
+            [
+              130,
+              278
+            ],
+            [
+              132,
+              376
+            ]
+          ]
+        },
+        {
+          "modulation": "32QAM",
+          "typicalDbm": -77.5,
+          "throughput": [
+            [
+              159,
+              202
+            ],
+            [
+              161,
+              267
+            ],
+            [
+              163,
+              348
+            ],
+            [
+              165,
+              472
+            ]
+          ]
+        },
+        {
+          "modulation": "64QAM",
+          "typicalDbm": -74.0,
+          "throughput": [
+            [
+              200,
+              254
+            ],
+            [
+              202,
+              335
+            ],
+            [
+              204,
+              438
+            ],
+            [
+              208,
+              594
+            ]
+          ]
+        },
+        {
+          "modulation": "128QAM",
+          "typicalDbm": -71.0,
+          "throughput": [
+            [
+              237,
+              300
+            ],
+            [
+              240,
+              397
+            ],
+            [
+              242,
+              518
+            ],
+            [
+              246,
+              702
+            ]
+          ]
+        },
+        {
+          "modulation": "256QAM",
+          "typicalDbm": -68.0,
+          "throughput": [
+            [
+              265,
+              336
+            ],
+            [
+              268,
+              443
+            ],
+            [
+              270,
+              579
+            ],
+            [
+              275,
+              785
+            ]
+          ]
+        },
+        {
+          "modulation": "512QAM",
+          "typicalDbm": -65.0,
+          "throughput": [
+            [
+              295,
+              373
+            ],
+            [
+              298,
+              493
+            ],
+            [
+              301,
+              644
+            ],
+            [
+              306,
+              873
+            ]
+          ]
+        },
+        {
+          "modulation": "1024QAM",
+          "typicalDbm": -61.5,
+          "throughput": [
+            [
+              323,
+              410
+            ],
+            [
+              327,
+              541
+            ],
+            [
+              330,
+              707
+            ],
+            [
+              335,
+              957
+            ]
+          ]
+        },
+        {
+          "modulation": "2048QAM",
+          "typicalDbm": -58.5,
+          "throughput": [
+            [
+              352,
+              446
+            ],
+            [
+              356,
+              589
+            ],
+            [
+              359,
+              770
+            ],
+            [
+              365,
+              1043
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xmc3e-7-56-on",
+      "bandGHz": 7,
+      "bandwidthMHz": 56,
+      "xpic": true,
+      "capacityTable": "1-65",
+      "sensitivityTables": [
+        "1-196",
+        "1-197"
+      ],
+      "rows": [
+        {
+          "modulation": "QPSK Strong",
+          "typicalDbm": -87.5,
+          "throughput": [
+            [
+              76,
+              96
+            ],
+            [
+              77,
+              127
+            ],
+            [
+              78,
+              167
+            ],
+            [
+              79,
+              226
+            ]
+          ]
+        },
+        {
+          "modulation": "QPSK",
+          "typicalDbm": -86.0,
+          "throughput": [
+            [
+              89,
+              113
+            ],
+            [
+              90,
+              149
+            ],
+            [
+              91,
+              195
+            ],
+            [
+              92,
+              264
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM Strong",
+          "typicalDbm": -80.5,
+          "throughput": [
+            [
+              154,
+              195
+            ],
+            [
+              155,
+              257
+            ],
+            [
+              157,
+              336
+            ],
+            [
+              160,
+              456
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM",
+          "typicalDbm": -79.0,
+          "throughput": [
+            [
+              180,
+              228
+            ],
+            [
+              182,
+              301
+            ],
+            [
+              183,
+              393
+            ],
+            [
+              186,
+              533
+            ]
+          ]
+        },
+        {
+          "modulation": "32QAM",
+          "typicalDbm": -76.0,
+          "throughput": [
+            [
+              225,
+              286
+            ],
+            [
+              228,
+              377
+            ],
+            [
+              230,
+              493
+            ],
+            [
+              234,
+              668
+            ]
+          ]
+        },
+        {
+          "modulation": "64QAM",
+          "typicalDbm": -72.5,
+          "throughput": [
+            [
+              283,
+              359
+            ],
+            [
+              286,
+              474
+            ],
+            [
+              289,
+              620
+            ],
+            [
+              294,
+              839
+            ]
+          ]
+        },
+        {
+          "modulation": "128QAM",
+          "typicalDbm": -69.5,
+          "throughput": [
+            [
+              335,
+              425
+            ],
+            [
+              339,
+              561
+            ],
+            [
+              342,
+              733
+            ],
+            [
+              348,
+              993
+            ]
+          ]
+        },
+        {
+          "modulation": "256QAM",
+          "typicalDbm": -66.5,
+          "throughput": [
+            [
+              375,
+              475
+            ],
+            [
+              379,
+              627
+            ],
+            [
+              382,
+              819
+            ],
+            [
+              389,
+              1109
+            ]
+          ]
+        },
+        {
+          "modulation": "512QAM",
+          "typicalDbm": -63.0,
+          "throughput": [
+            [
+              416,
+              528
+            ],
+            [
+              421,
+              697
+            ],
+            [
+              425,
+              911
+            ],
+            [
+              432,
+              1233
+            ]
+          ]
+        },
+        {
+          "modulation": "1024QAM",
+          "typicalDbm": -60.0,
+          "throughput": [
+            [
+              457,
+              579
+            ],
+            [
+              462,
+              764
+            ],
+            [
+              466,
+              999
+            ],
+            [
+              474,
+              1353
+            ]
+          ]
+        },
+        {
+          "modulation": "2048QAM",
+          "typicalDbm": -57.0,
+          "throughput": [
+            [
+              493,
+              624
+            ],
+            [
+              498,
+              824
+            ],
+            [
+              503,
+              1077
+            ],
+            [
+              511,
+              1458
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xmc3e-8-56-on",
+      "bandGHz": 8,
+      "bandwidthMHz": 56,
+      "xpic": true,
+      "capacityTable": "1-65",
+      "sensitivityTables": [
+        "1-196",
+        "1-197"
+      ],
+      "rows": [
+        {
+          "modulation": "QPSK Strong",
+          "typicalDbm": -87.5,
+          "throughput": [
+            [
+              76,
+              96
+            ],
+            [
+              77,
+              127
+            ],
+            [
+              78,
+              167
+            ],
+            [
+              79,
+              226
+            ]
+          ]
+        },
+        {
+          "modulation": "QPSK",
+          "typicalDbm": -86.0,
+          "throughput": [
+            [
+              89,
+              113
+            ],
+            [
+              90,
+              149
+            ],
+            [
+              91,
+              195
+            ],
+            [
+              92,
+              264
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM Strong",
+          "typicalDbm": -80.5,
+          "throughput": [
+            [
+              154,
+              195
+            ],
+            [
+              155,
+              257
+            ],
+            [
+              157,
+              336
+            ],
+            [
+              160,
+              456
+            ]
+          ]
+        },
+        {
+          "modulation": "16QAM",
+          "typicalDbm": -79.0,
+          "throughput": [
+            [
+              180,
+              228
+            ],
+            [
+              182,
+              301
+            ],
+            [
+              183,
+              393
+            ],
+            [
+              186,
+              533
+            ]
+          ]
+        },
+        {
+          "modulation": "32QAM",
+          "typicalDbm": -76.0,
+          "throughput": [
+            [
+              225,
+              286
+            ],
+            [
+              228,
+              377
+            ],
+            [
+              230,
+              493
+            ],
+            [
+              234,
+              668
+            ]
+          ]
+        },
+        {
+          "modulation": "64QAM",
+          "typicalDbm": -72.5,
+          "throughput": [
+            [
+              283,
+              359
+            ],
+            [
+              286,
+              474
+            ],
+            [
+              289,
+              620
+            ],
+            [
+              294,
+              839
+            ]
+          ]
+        },
+        {
+          "modulation": "128QAM",
+          "typicalDbm": -69.5,
+          "throughput": [
+            [
+              335,
+              425
+            ],
+            [
+              339,
+              561
+            ],
+            [
+              342,
+              733
+            ],
+            [
+              348,
+              993
+            ]
+          ]
+        },
+        {
+          "modulation": "256QAM",
+          "typicalDbm": -66.5,
+          "throughput": [
+            [
+              375,
+              475
+            ],
+            [
+              379,
+              627
+            ],
+            [
+              382,
+              819
+            ],
+            [
+              389,
+              1109
+            ]
+          ]
+        },
+        {
+          "modulation": "512QAM",
+          "typicalDbm": -63.0,
+          "throughput": [
+            [
+              416,
+              528
+            ],
+            [
+              421,
+              697
+            ],
+            [
+              425,
+              911
+            ],
+            [
+              432,
+              1233
+            ]
+          ]
+        },
+        {
+          "modulation": "1024QAM",
+          "typicalDbm": -60.0,
+          "throughput": [
+            [
+              457,
+              579
+            ],
+            [
+              462,
+              764
+            ],
+            [
+              466,
+              999
+            ],
+            [
+              474,
+              1353
+            ]
+          ]
+        },
+        {
+          "modulation": "2048QAM",
+          "typicalDbm": -57.0,
+          "throughput": [
+            [
+              493,
+              624
+            ],
+            [
+              498,
+              824
+            ],
+            [
+              503,
+              1077
+            ],
+            [
+              511,
+              1458
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

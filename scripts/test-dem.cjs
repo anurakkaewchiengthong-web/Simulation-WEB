@@ -1,0 +1,12 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');const html=fs.readFileSync('dist/single.html','utf8');for(const m of html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g))new vm.Script(m[1]);
+const c={Math,Number,nativeDEM:null,demZoom:11,clamp:(v,a,b)=>Math.min(b,Math.max(a,v))};vm.createContext(c);
+for(const name of ['bilinearDEM','terrainZoom','demSpacing','profileSteps','simulationSize','interpolate']){const start=html.indexOf('function '+name+'('),end=html.indexOf('\nfunction ',start+1);let source=html.slice(start,end);vm.runInContext(source,c)}
+assert.equal(c.bilinearDEM(.25,.75,(x,y)=>100+2*x+4*y),103.5);assert.equal(c.bilinearDEM(.5,.5,(x,y)=>x?null:100),null);assert.equal(c.bilinearDEM(255.5,1,(x,y)=>x),255.5);assert.equal(c.bilinearDEM(0,0,(x,y)=>x||y?null:50),50);
+assert.equal(c.simulationSize({radius:200,resolution:201}),501);assert.equal(c.simulationSize({radius:25,resolution:201}),201);assert(c.terrainZoom({lat:18.3})>=11);assert(c.profileSteps(200000,{lat:18.3})>120);assert(Number.isNaN(c.interpolate([1,NaN,2,3],2,2,.5,.5)));console.log('PASS JavaScript syntax; DEM slope, seam, no-data; expanded grid; terrain sampling; missing-cell transparency');
+
+assert.equal(c.simulationSize({radius:10,resolution:201,gridTarget:50}),401);assert.equal(c.simulationSize({radius:25,resolution:201,gridTarget:50}),1001);assert.equal(c.simulationSize({radius:200,resolution:201,gridTarget:50}),1001);assert(c.terrainZoom({lat:18.3,gridTarget:50})>c.terrainZoom({lat:18.3}));c.nativeDEM={pixel:30};assert(c.profileSteps(10000,{gridTarget:50})>c.profileSteps(10000,{}));console.log('PASS 50m grid sizing, honest cap, finer DEM and path steps');
+// Narrow synthetic ridge missed by the previous ~60m sampling, captured at ~30m.
+c.demReady=true;c.mapClass=()=>null;c.ground=(x,y)=>Math.abs(Math.hypot(x,y)*1000-30)<5?100:0;
+vm.runInContext(html.slice(html.indexOf('function propagation('),html.indexOf('\nfunction initialZoom')),c);
+const base={pattern:'omni',model:'baseline',freq:857,terrain:true,az:0,beam:90,tx:43,gain:0,feed:0,mobileGain:0,mobileLoss:0,mobileTx:33,excess:0,preTmaLoss:0,ulLoss:0,dlLoss:0,tmaEnabled:false,baseHeight:10,mobileHeight:10,referenceHeight:10};
+const coarse=c.propagation(10,0,base),fine=c.propagation(10,0,{...base,gridTarget:50});assert(fine.diffraction>coarse.diffraction+10);assert(fine.down<coarse.down-10);console.log('PASS real propagation detects narrow synthetic ridge with finer DEM profile sampling');

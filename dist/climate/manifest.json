@@ -1,0 +1,39 @@
+{
+  "release": "p530-18_p837-7-drive-v1",
+  "encoding": "float64-le",
+  "bandDegrees": 10,
+  "latitudeOrder": "90 to -90",
+  "longitudeOrder": "-180 to 180",
+  "interpolation": "bilinear on map values",
+  "driveFolder": "https://drive.google.com/drive/folders/1KD_aZCMZNI1dnjCgEpXsFsxRR0VazQJu",
+  "importDate": "2026-10-27",
+  "maps": {
+    "logK": {
+      "sourceFile": "LogK.csv",
+      "sourceSHA256": "90bfda07292a942322f6ab3052cd7bacc4122e43b4445baf72334ded16db9f38",
+      "sourceURL": "https://drive.google.com/file/d/1QY5xen0Mk-ww0c-roJuux2ovbG6r50B7/view",
+      "step": 0.25,
+      "rows": 721,
+      "columns": 1441,
+      "sourceLatitudeOrder": "north-to-south"
+    },
+    "dN75": {
+      "sourceFile": "dN75.csv",
+      "sourceSHA256": "ed5235ce3ef401a40f7ad86f5ec441bd6e29f7ac97640b73f00da8708a6ee364",
+      "sourceURL": "https://drive.google.com/file/d/1HY5conqurzOgLwqul6IuvohHvDZS6eYI/view",
+      "step": 0.25,
+      "rows": 721,
+      "columns": 1441,
+      "sourceLatitudeOrder": "north-to-south"
+    },
+    "r001": {
+      "sourceFile": "R001.TXT",
+      "sourceSHA256": "360cc6fa81df0403ba00a881cc2e0d58cd67123187dd3244f79273bdb330e553",
+      "sourceURL": "https://www.itu.int/dms_pubrec/itu-r/rec/p/R-REC-P.837-7-201706-S!!ZIP-E.zip",
+      "step": 0.125,
+      "rows": 1441,
+      "columns": 2881,
+      "sourceLatitudeOrder": "south-to-north"
+    }
+  }
+}
