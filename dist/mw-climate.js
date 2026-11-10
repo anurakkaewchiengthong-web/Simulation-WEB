@@ -1,0 +1,10 @@
+/* Bilinear interpolation on ITU map values. LogK is interpolated directly, not K. */
+(function(root){'use strict';
+const grids={logK:{step:.25,rows:721,cols:1441},dN75:{step:.25,rows:721,cols:1441},r001:{step:.125,rows:1441,cols:2881}};
+function cell(lat,lon,g){if(!Number.isFinite(lat)||!Number.isFinite(lon)||Math.abs(lat)>90||Math.abs(lon)>180)throw Error('พิกัดอยู่นอกช่วง Latitude ±90°, Longitude ±180°');const y=(90-lat)/g.step,x=(lon+180)/g.step,row=Math.min(g.rows-2,Math.floor(y)),col=Math.min(g.cols-2,Math.floor(x));return {row,col,dy:y-row,dx:x-col,band:Math.min(17,Math.floor(row/(10/g.step)))}}
+function interpolate(v,g,c){const i=(c.row-c.band*(10/g.step))*g.cols+c.col,a=[v[i],v[i+1],v[i+g.cols],v[i+g.cols+1]];if(a.some(x=>!Number.isFinite(x)))throw Error('ข้อมูลกริดไม่ครบ');return (a[0]*(1-c.dx)+a[1]*c.dx)*(1-c.dy)+(a[2]*(1-c.dx)+a[3]*c.dx)*c.dy}
+const cache=new Map();
+async function bandData(name,band,fetcher=fetch){const key=name+'/'+band;if(!cache.has(key)){const p=(async()=>{const r=await fetcher('climate/'+name+'-'+String(band).padStart(2,'0')+'.bin');if(!r.ok)throw Error('โหลดฐานข้อมูลไม่สำเร็จ ('+r.status+')');const b=await r.arrayBuffer(),g=grids[name];if(b.byteLength!==(10/g.step+1)*g.cols*8)throw Error('ไฟล์กริดไม่สมบูรณ์');const dv=new DataView(b),v=new Float64Array(b.byteLength/8);for(let i=0;i<v.length;i++)v[i]=dv.getFloat64(i*8,true);return v})();cache.set(key,p);p.catch(()=>{if(cache.get(key)===p)cache.delete(key)});if(cache.size>9)cache.delete(cache.keys().next().value)}return cache.get(key)}
+async function lookup(lat,lon,fetcher){const entries=await Promise.all(Object.entries(grids).map(async([name,g])=>{const c=cell(lat,lon,g);return [name,interpolate(await bandData(name,c.band,fetcher),g,c)]}));return {lat,lon,...Object.fromEntries(entries),source:'LogK/dN75: user Drive, P.530-18; R001: ITU P.837-7; bilinear; midpoint',dataset:'p530-18_p837-7-drive-v1'}}
+const api={grids,cell,interpolate,lookup};if(typeof module==='object')module.exports=api;else root.MWClimate=api;
+})(globalThis);

@@ -1,0 +1,96 @@
+[
+  {
+    "name": "SC420-HF2LDF(D06)",
+    "kind": "Omni",
+    "reason": "Different patterns claim the same FREQUENCY",
+    "conflicts": [
+      [
+        "SC420-HF2LDF(D06)_0890.prn",
+        "SC420-HF2LDF(D06)_0896.prn"
+      ]
+    ]
+  },
+  {
+    "name": "SC420-HF4SNF(D00)",
+    "kind": "Omni",
+    "reason": "Different patterns claim the same FREQUENCY",
+    "conflicts": [
+      [
+        "SC420-HF4SNF(D00)_0940.prn",
+        "SC420-HF4SNF(D00)_0941.prn"
+      ]
+    ]
+  },
+  {
+    "name": "SC476-HF1LDF(D00)",
+    "kind": "Omni",
+    "reason": "Different patterns claim the same FREQUENCY",
+    "conflicts": [
+      [
+        "SC476-HF1LDF(D00)_0746.prn",
+        "SC476-HF1LDF(D00)_746.prn"
+      ],
+      [
+        "SC476-HF1LDF(D00)_0777.prn",
+        "SC476-HF1LDF(D00)_777.prn"
+      ],
+      [
+        "SC476-HF1LDF(D00)_0808.prn",
+        "SC476-HF1LDF(D00)_808.prn"
+      ],
+      [
+        "SC476-HF1LDF(D00)_0838.prn",
+        "SC476-HF1LDF(D00)_838.prn"
+      ],
+      [
+        "SC476-HF1LDF(D00)_0869.prn",
+        "SC476-HF1LDF(D00)_869.prn"
+      ]
+    ]
+  },
+  {
+    "name": "SC476-HF1LDF(D00-E5749)",
+    "kind": "Omni",
+    "reason": "Different patterns claim the same FREQUENCY",
+    "conflicts": [
+      [
+        "SC476-HF1LDF(D00-E5749)_0746.prn",
+        "SC476-HF1LDF(D00-E5749)_746.prn"
+      ],
+      [
+        "SC476-HF1LDF(D00-E5749)_0777.prn",
+        "SC476-HF1LDF(D00-E5749)_777.prn"
+      ],
+      [
+        "SC476-HF1LDF(D00-E5749)_0838.prn",
+        "SC476-HF1LDF(D00-E5749)_838.prn"
+      ],
+      [
+        "SC476-HF1LDF(D00-E5749)_0869.prn",
+        "SC476-HF1LDF(D00-E5749)_869.prn"
+      ]
+    ]
+  },
+  {
+    "name": "SC476-HF1LDF(D05-E5765)",
+    "kind": "Omni",
+    "reason": "Different patterns claim the same FREQUENCY",
+    "conflicts": [
+      [
+        "SC476-HF1LDF(D05-E5765)_0869.prn",
+        "SC476-HF1LDF(D05-E5765)_869.prn"
+      ]
+    ]
+  },
+  {
+    "name": "SY307-SF1SNM",
+    "kind": "Yagi",
+    "reason": "Different patterns claim the same FREQUENCY",
+    "conflicts": [
+      [
+        "SY307-SF1SNM_0430.prn",
+        "SY307-SF1SNM_0431.prn"
+      ]
+    ]
+  }
+]
