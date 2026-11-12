@@ -14,7 +14,7 @@ test('Sim 1 entrypoint and field-import panel initialize',async()=>{
  try{
   await p.goto(base+'/single.html',{waitUntil:'domcontentloaded'});
   await p.locator('#form').waitFor();
-  await p.locator('#fieldImportFile').waitFor();
+  await p.locator('#fieldImportFile').waitFor({state:'attached'});
   assert.equal(await p.locator('#form').count(),1);
   assert.equal(await p.locator('#fieldImportFile').getAttribute('type'),'file');
  }finally{await context.close()}
