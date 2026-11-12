@@ -103,3 +103,7 @@ python scripts/audit_js_dependencies.py
 ```
 
 This uses only the Python standard library and reports to stdout; it does not mutate the repository.
+
+## CI verification
+
+The branch workflow is configured to run on pushes to `audit/**`, pull requests, and manual dispatch. Check the latest Actions run for actual pass/fail results before modifying application code. The static inventory is not an AST-level graph and cannot prove runtime initialization correctness.
