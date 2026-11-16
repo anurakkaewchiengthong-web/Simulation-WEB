@@ -92,6 +92,8 @@ test('Sim 1 tiled mode computes a small coverage grid without silent downsamplin
  try{
   await p.goto(base+'/single.html',{waitUntil:'domcontentloaded'});
   const errors=[];p.on('pageerror',e=>errors.push(e.message));
+  await p.locator('#lat').fill('15.993741');
+  await p.locator('#lon').fill('99.364571');
   await p.locator('#tiledMode').check();
   await p.locator('#autoRange').uncheck();
   await p.locator('#radius').fill('0.5');
