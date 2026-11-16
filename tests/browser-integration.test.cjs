@@ -98,7 +98,7 @@ test('Sim 1 tiled mode computes a small coverage grid without silent downsamplin
   await p.locator('#gridTarget').selectOption('250');
   await p.locator('#terrainEnabled').uncheck();
   await p.locator('#form').evaluate(form=>form.requestSubmit());
-  await p.waitForFunction(()=>document.querySelector('#mapStatus')?.textContent.includes('คำนวณแบบ Tiles'),null,{timeout:60000});
+  await p.waitForFunction(()=>document.querySelector('#mapStatus')?.textContent.includes('คำนวณแบบ Tiles')||document.querySelector('#error')?.textContent.trim(),null,{timeout:20000}).catch(async err=>{const diagnostic=await p.evaluate(()=>({status:document.querySelector('#mapStatus')?.textContent,error:document.querySelector('#error')?.textContent,valid:document.querySelector('#form')?.checkValidity(),tiled:document.querySelector('#tiledMode')?.checked,radius:document.querySelector('#radius')?.value,grid:document.querySelector('#gridTarget')?.value}));throw Error('Tiled timeout: '+JSON.stringify({diagnostic,errors,original:err.message}))});
   assert.match(await p.locator('#mapStatus').innerText(),/Tiles/);
   assert.equal(await p.locator('#error').innerText(),'');
   assert.deepEqual(errors,[]);
