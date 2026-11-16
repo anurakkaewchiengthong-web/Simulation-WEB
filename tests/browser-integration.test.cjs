@@ -65,7 +65,8 @@ test('Sim 1 CSV field measurements render markers, details and removal',async()=
   });
   await p.waitForFunction(()=>document.querySelector('#fieldImportStatus')?.textContent.includes('2 จุด'));
   assert.equal(await p.locator('.field-marker').count(),2);
-  await p.locator('.field-marker').first().click();
+  await p.locator('.field-marker').first().focus();
+  await p.keyboard.press('Enter');
   assert.match(await p.locator('.field-point-detail').innerText(),/RSSI วัดจริง: -87 dBm/);
   await p.locator('#fieldImportRemove').click();
   assert.equal(await p.locator('.field-marker').count(),0);
