@@ -24,3 +24,5 @@ jobs:
         run: node tests/js-api-baseline.test.cjs
       - name: RF model regression tests
         run: node tests/rf-model-regression.test.cjs
+      - name: Tiled coverage tests
+        run: node --test tests/tiled-coverage.test.cjs
