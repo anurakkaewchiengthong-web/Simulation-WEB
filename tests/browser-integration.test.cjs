@@ -91,6 +91,7 @@ test('Sim 1 tiled mode computes a small coverage grid without silent downsamplin
  const {p,context}=await page();
  try{
   await p.goto(base+'/single.html',{waitUntil:'domcontentloaded'});
+  const errors=[];p.on('pageerror',e=>errors.push(e.message));
   await p.locator('#tiledMode').check();
   await p.locator('#autoRange').uncheck();
   await p.locator('#radius').fill('0.5');
@@ -100,5 +101,6 @@ test('Sim 1 tiled mode computes a small coverage grid without silent downsamplin
   await p.waitForFunction(()=>document.querySelector('#mapStatus')?.textContent.includes('คำนวณแบบ Tiles'),null,{timeout:60000});
   assert.match(await p.locator('#mapStatus').innerText(),/Tiles/);
   assert.equal(await p.locator('#error').innerText(),'');
+  assert.deepEqual(errors,[]);
  }finally{await context.close()}
 });
