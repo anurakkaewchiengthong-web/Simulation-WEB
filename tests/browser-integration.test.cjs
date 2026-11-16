@@ -61,7 +61,7 @@ test('Sim 1 CSV field measurements render markers, details and removal',async()=
   await p.locator('#fieldImportFile').waitFor({state:'attached'});
   await p.locator('#fieldImportFile').setInputFiles({
    name:'measurements.csv',mimeType:'text/csv',
-   buffer:Buffer.from('LAT,LONG,RSSI,NAME\\n15.993741,99.364571,-87,Client A\\n15.993842,99.364672,-99,Client B\\n')
+   buffer:Buffer.from('LAT,LONG,RSSI,NAME\n15.993741,99.364571,-87,Client A\n15.993842,99.364672,-99,Client B\n')
   });
   await p.waitForFunction(()=>document.querySelector('#fieldImportStatus')?.textContent.includes('2 จุด'));
   assert.equal(await p.locator('.field-marker').count(),2);
@@ -79,7 +79,7 @@ test('Sim 1 rejects invalid CSV without enabling export',async()=>{
   await p.locator('#fieldImportFile').waitFor({state:'attached'});
   await p.locator('#fieldImportFile').setInputFiles({
    name:'invalid.csv',mimeType:'text/csv',
-   buffer:Buffer.from('LAT,LONG,RSSI\\n99,101,-90\\n')
+   buffer:Buffer.from('LAT,LONG,RSSI\n99,101,-90\n')
   });
   await p.waitForFunction(()=>document.querySelector('#fieldImportStatus')?.textContent.includes('อ่านไม่ได้:'));
   assert.equal(await p.locator('#fieldKmz').isDisabled(),true);
