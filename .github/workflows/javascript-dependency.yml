@@ -22,3 +22,5 @@ jobs:
         run: python scripts/audit_js_dependencies.py
       - name: JavaScript baseline tests
         run: node tests/js-api-baseline.test.cjs
+      - name: RF model regression tests
+        run: node tests/rf-model-regression.test.cjs
