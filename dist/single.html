@@ -218,7 +218,7 @@ const cancelJob=()=>finish(null,true);activeComputation=cancelJob;
 const dispatch=worker=>{if(token!==runToken){cancelJob();return}if(nextRow>=N)return;const start=nextRow;nextRow=Math.min(N,start+2);worker.postMessage({type:'rows',start,end:nextRow})};
 try{for(let k=0;k<count;k++){const worker=new Worker(url);workers.push(worker);worker.onerror=e=>finish(Error(e.message||'Worker failed'));worker.onmessage=({data:m})=>{if(finished)return;if(token!==runToken){cancelJob();return}if(m.type==='error'){finish(Error(m.message));return}if(m.type==='ready'){dispatch(worker);return}for(const [i,v] of m.results){if(v){slots[i]=v;for(const mode of ['down','up','both']){scenarioValues.manual[mode][i]=v[mode];scenarioValues.map[mode][i]=v[mode]}}else{const row=Math.floor(i/N),col=i%N,d=Math.hypot((col+.5-N/2)*2*cfg.radius/N,(N/2-row-.5)*2*cfg.radius/N);if(!['hata','cost231'].includes(cfg.model)||d<=20)cfg.missingCells++}}done+=m.end-m.start;el('mapStatus').textContent='กำลังคำนวณ '+Math.round(done*100/N)+'% · '+count+' ชุดงานเบื้องหลัง · '+(2*cfg.radius*1000/N).toFixed(0)+' m ต่อช่อง';if(done===N)finish();else dispatch(worker)};worker.postMessage({type:'init',cfg,N,terrain})}}catch(e){finish(e)}
 })}
-async async function buildTiled(token){
+async function buildTiled(token){
  const plan=RFTiledCoverage.plan(cfg.radius,cfg.gridTarget);grid=[];scenarioValues={manual:emptyBands(),map:emptyBands()};cfg.missingCells=0;
  let done=0,lastYield=performance.now();const count=plan.tilesX*plan.tilesY;
  for(const tile of RFTiledCoverage.tiles(plan)){
