@@ -86,3 +86,19 @@ test('Sim 1 rejects invalid CSV without enabling export',async()=>{
   assert.equal(await p.locator('#fieldKmz').isDisabled(),true);
  }finally{await context.close()}
 });
+
+test('Sim 1 tiled mode computes a small coverage grid without silent downsampling',async()=>{
+ const {p,context}=await page();
+ try{
+  await p.goto(base+'/single.html',{waitUntil:'domcontentloaded'});
+  await p.locator('#tiledMode').check();
+  await p.locator('#autoRange').uncheck();
+  await p.locator('#radius').fill('0.5');
+  await p.locator('#gridTarget').selectOption('250');
+  await p.locator('#terrainEnabled').uncheck();
+  await p.locator('#form').evaluate(form=>form.requestSubmit());
+  await p.waitForFunction(()=>document.querySelector('#mapStatus')?.textContent.includes('คำนวณแบบ Tiles'),{timeout:60000});
+  assert.match(await p.locator('#mapStatus').innerText(),/Tiles/);
+  assert.equal(await p.locator('#error').innerText(),'');
+ }finally{await context.close()}
+});
