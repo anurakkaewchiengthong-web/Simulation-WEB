@@ -53,3 +53,35 @@ test('Wi-Fi parameters validate, save and restore',async()=>{
   assert.equal(await p.locator('#project').inputValue(),'CI browser smoke');
  }finally{await context.close()}
 });
+
+test('Sim 1 CSV field measurements render markers, details and removal',async()=>{
+ const {p,context}=await page();
+ try{
+  await p.goto(base+'/single.html',{waitUntil:'domcontentloaded'});
+  await p.locator('#fieldImportFile').waitFor({state:'attached'});
+  await p.locator('#fieldImportFile').setInputFiles({
+   name:'measurements.csv',mimeType:'text/csv',
+   buffer:Buffer.from('LAT,LONG,RSSI,NAME\\n15.993741,99.364571,-87,Client A\\n15.993842,99.364672,-99,Client B\\n')
+  });
+  await p.waitForFunction(()=>document.querySelector('#fieldImportStatus')?.textContent.includes('2 จุด'));
+  assert.equal(await p.locator('.field-marker').count(),2);
+  await p.locator('.field-marker').first().click();
+  assert.match(await p.locator('.field-point-detail').innerText(),/RSSI วัดจริง: -87 dBm/);
+  await p.locator('#fieldImportRemove').click();
+  assert.equal(await p.locator('.field-marker').count(),0);
+  assert.equal(await p.locator('#fieldFit').isDisabled(),true);
+ }finally{await context.close()}
+});
+test('Sim 1 rejects invalid CSV without enabling export',async()=>{
+ const {p,context}=await page();
+ try{
+  await p.goto(base+'/single.html',{waitUntil:'domcontentloaded'});
+  await p.locator('#fieldImportFile').waitFor({state:'attached'});
+  await p.locator('#fieldImportFile').setInputFiles({
+   name:'invalid.csv',mimeType:'text/csv',
+   buffer:Buffer.from('LAT,LONG,RSSI\\n99,101,-90\\n')
+  });
+  await p.waitForFunction(()=>document.querySelector('#fieldImportStatus')?.textContent.includes('อ่านไม่ได้:'));
+  assert.equal(await p.locator('#fieldKmz').isDisabled(),true);
+ }finally{await context.close()}
+});
