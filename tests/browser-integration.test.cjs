@@ -97,7 +97,7 @@ test('Sim 1 tiled mode computes a small coverage grid without silent downsamplin
   await p.locator('#gridTarget').selectOption('250');
   await p.locator('#terrainEnabled').uncheck();
   await p.locator('#form').evaluate(form=>form.requestSubmit());
-  await p.waitForFunction(()=>document.querySelector('#mapStatus')?.textContent.includes('คำนวณแบบ Tiles'),{timeout:60000});
+  await p.waitForFunction(()=>document.querySelector('#mapStatus')?.textContent.includes('คำนวณแบบ Tiles'),null,{timeout:60000});
   assert.match(await p.locator('#mapStatus').innerText(),/Tiles/);
   assert.equal(await p.locator('#error').innerText(),'');
  }finally{await context.close()}
