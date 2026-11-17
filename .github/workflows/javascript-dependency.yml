@@ -30,5 +30,7 @@ jobs:
         run: node --test tests/ring-search.test.cjs
       - name: On-demand tile scheduler tests
         run: node --test tests/on-demand-tiles.test.cjs
+      - name: On-demand RF adapter tests
+        run: node --test tests/on-demand-rf-adapter.test.cjs
       - name: HTML inline script syntax
         run: node --test tests/html-inline-syntax.test.cjs
