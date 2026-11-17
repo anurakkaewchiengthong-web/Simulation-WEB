@@ -17,7 +17,7 @@ function createScheduler({load,maxConcurrent=2,maxCache=32}={}){
    Promise.resolve().then(()=>load(task.key,{signal:task.signal,epoch:task.epoch})).then(value=>{
     if(task.epoch!==epoch||task.signal?.aborted)throw Error('TILE_CANCELLED');
     put(task.key,value);task.resolve(value);
-   },task.reject).finally(()=>{
+   }).catch(task.reject).finally(()=>{
     running--;if(inflight.get(task.key)===task.promise)inflight.delete(task.key);pump();
    });
   }
