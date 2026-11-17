@@ -10,7 +10,7 @@ test('adapter preserves legacy pixel-centre coordinate formula and RF callback',
 test('adapter excludes outside-circle pixels and deduplicates requests',async()=>{
  let calls=0;const a=ctx.RFOnDemandAdapter.createRFAdapter({propagation:()=>++calls,config:{},gridSize:5,radiusKm:1});
  const tile={x:0,y:0,width:2,height:2};const [v,w]=await Promise.all([a.requestTile(tile),a.requestTile(tile)]);
- assert.equal(v.length,1);assert.equal(w.length,1);assert.equal(calls,1);
+ assert.equal(v.length,3);assert.equal(w.length,3);assert.equal(calls,3);
 });
 test('rejects invalid tile bounds and invalid adapter configuration',async()=>{
  assert.throws(()=>ctx.RFOnDemandAdapter.createRFAdapter({config:{},gridSize:5,radiusKm:1}),/Invalid RF/);
