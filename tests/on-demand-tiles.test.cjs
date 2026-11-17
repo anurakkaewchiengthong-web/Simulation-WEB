@@ -23,9 +23,12 @@ test('LRU cache evicts least recently used tile',async()=>{
 test('cancelAll invalidates queued and running results',async()=>{
  let release;const s=create({maxConcurrent:1,load:()=>new Promise(r=>release=r)});
  const a=s.request('a'),b=s.request('b');
+ // Attach both rejection handlers before cancelAll() rejects queued work.
+ const aRejected=assert.rejects(a,/TILE_CANCELLED/);
+ const bRejected=assert.rejects(b,/TILE_CANCELLED/);
  await new Promise(resolve=>setImmediate(resolve));s.cancelAll();
- await assert.rejects(b,/TILE_CANCELLED/);
- release('stale');await assert.rejects(a,/TILE_CANCELLED/);
+ await bRejected;
+ release('stale');await aRejected;
  assert.equal(s.stats().cached,0);
 });
 test('rejects invalid configuration and aborted signals',async()=>{
