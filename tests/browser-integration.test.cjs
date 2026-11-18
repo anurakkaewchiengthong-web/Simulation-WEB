@@ -100,9 +100,29 @@ test('Sim 1 tiled mode computes a small coverage grid without silent downsamplin
   await p.locator('#gridTarget').selectOption('250');
   await p.locator('#terrainEnabled').uncheck();
   await p.locator('#form').evaluate(form=>form.requestSubmit());
-  await p.waitForFunction(()=>document.querySelector('#mapStatus')?.textContent.includes('คำนวณแบบ Tiles')||document.querySelector('#error')?.textContent.trim(),null,{timeout:20000}).catch(async err=>{const diagnostic=await p.evaluate(()=>({status:document.querySelector('#mapStatus')?.textContent,error:document.querySelector('#error')?.textContent,valid:document.querySelector('#form')?.checkValidity(),tiled:document.querySelector('#tiledMode')?.checked,radius:document.querySelector('#radius')?.value,grid:document.querySelector('#gridTarget')?.value}));throw Error('Tiled timeout: '+JSON.stringify({diagnostic,errors,original:err.message}))});
-  assert.match(await p.locator('#mapStatus').innerText(),/Tiles/);
+  await p.waitForFunction(()=>document.querySelector('#coverageHint')?.textContent.includes('คำนวณแบบ On-demand Tiles')||document.querySelector('#error')?.textContent.trim(),null,{timeout:20000}).catch(async err=>{const diagnostic=await p.evaluate(()=>({status:document.querySelector('#mapStatus')?.textContent,error:document.querySelector('#error')?.textContent,valid:document.querySelector('#form')?.checkValidity(),tiled:document.querySelector('#tiledMode')?.checked,radius:document.querySelector('#radius')?.value,grid:document.querySelector('#gridTarget')?.value}));throw Error('Tiled timeout: '+JSON.stringify({diagnostic,errors,original:err.message}))});
+  assert.match(await p.locator('#coverageHint').innerText(),/คำนวณแบบ On-demand Tiles/);
   assert.equal(await p.locator('#error').innerText(),'');
+  assert.deepEqual(errors,[]);
+ }finally{await context.close()}
+});
+
+test('Sim 1 on-demand tiled result is produced with DEM disabled and expected spacing',async()=>{
+ const {p,context}=await page();
+ try{
+  await p.goto(base+'/single.html',{waitUntil:'domcontentloaded'});
+  const errors=[];p.on('pageerror',e=>errors.push(e.message));
+  await p.locator('#lat').fill('15.993741');
+  await p.locator('#lon').fill('99.364571');
+  await p.locator('#tiledMode').check();
+  await p.locator('#autoRange').uncheck();
+  await p.locator('#radius').fill('1');
+  await p.locator('#gridTarget').selectOption('250');
+  await p.locator('#terrainEnabled').uncheck();
+  await p.locator('#form').evaluate(form=>form.requestSubmit());
+  await p.waitForFunction(()=>document.querySelector('#coverageHint')?.textContent.includes('คำนวณแบบ On-demand Tiles')||document.querySelector('#error')?.textContent.trim(),null,{timeout:30000});
+  assert.equal(await p.locator('#error').innerText(),'');
+  assert.match(await p.locator('#coverageHint').innerText(),/กริด/);
   assert.deepEqual(errors,[]);
  }finally{await context.close()}
 });
