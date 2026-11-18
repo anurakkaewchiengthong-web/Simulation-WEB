@@ -126,3 +126,25 @@ test('Sim 1 on-demand tiled result is produced with DEM disabled and expected sp
   assert.deepEqual(errors,[]);
  }finally{await context.close()}
 });
+
+test('Sim 1 tiled DEM uses bundled native terrain and completes RF calculation',async()=>{
+ const {p,context}=await page();
+ try{
+  await p.goto(base+'/single.html',{waitUntil:'domcontentloaded'});
+  const errors=[];p.on('pageerror',e=>errors.push(e.message));
+  await p.locator('#lat').fill('15.993741');
+  await p.locator('#lon').fill('99.364571');
+  await p.locator('#tiledMode').check();
+  await p.locator('#autoRange').uncheck();
+  await p.locator('#radius').fill('0.5');
+  await p.locator('#gridTarget').selectOption('250');
+  await p.locator('#terrainEnabled').check();
+  await p.locator('#form').evaluate(form=>form.requestSubmit());
+  await p.waitForFunction(()=>document.querySelector('#mapStatus')?.textContent.includes('คำนวณและวาดสี')||document.querySelector('#error')?.textContent.trim(),null,{timeout:60000});
+  const status=await p.locator('#mapStatus').innerText();
+  assert.equal(await p.locator('#error').innerText(),'');
+  assert.match(status,/DEM พิกัดเริ่มต้น ต้นฉบับ 30\.15 ม\./);
+  assert.match(status,/คำนวณแบบ Tiles/);
+  assert.deepEqual(errors,[]);
+ }finally{await context.close()}
+});
