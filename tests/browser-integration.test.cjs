@@ -194,7 +194,7 @@ test('Sim 1 displays 200 km search reach without allocating a 200 km raster',asy
   const info=await p.locator('#ringExtentInfo').innerText();
   assert.match(info,/Ring Search 200\.0 km/);
   assert.match(info,/Raster/);
-  assert.match(info,/Raster 1\\.0 km/);
+  assert.ok(info.includes('Raster 1.0 km'));
   assert.deepEqual(errors,[]);
  }finally{await context.close()}
 });
