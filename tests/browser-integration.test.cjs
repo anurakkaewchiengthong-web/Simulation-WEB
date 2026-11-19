@@ -187,7 +187,7 @@ test('Sim 1 displays 200 km search reach without allocating a 200 km raster',asy
    })})});
   });
   await p.locator('#form').evaluate(form=>form.requestSubmit());
-  await p.waitForFunction(()=>document.querySelector('#mapStatus')?.textContent.includes('คำนวณและวาดสี')||document.querySelector('#error')?.textContent.trim(),null,{timeout:45000});
+  await p.waitForFunction(()=>document.querySelector('#mapStatus')?.textContent.includes('คำนวณและวาดสี')||document.querySelector('#error')?.textContent.trim(),null,{timeout:15000}).catch(async e=>{const state=await p.evaluate(()=>({status:document.querySelector('#mapStatus')?.textContent,error:document.querySelector('#error')?.textContent,valid:document.querySelector('#form')?.checkValidity(),invalid:[...document.querySelector('#form').elements].filter(x=>x.willValidate&&!x.checkValidity()).map(x=>({id:x.id,message:x.validationMessage})),info:document.querySelector('#ringExtentInfo')?.textContent}));throw Error('Ring UI browser diagnostic '+JSON.stringify(state)+' '+e.message)});
   assert.equal(await p.locator('#error').innerText(),'');
   const info=await p.locator('#ringExtentInfo').innerText();
   assert.match(info,/Ring Search 200\.0 km/);
