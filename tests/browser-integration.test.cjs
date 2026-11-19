@@ -169,3 +169,32 @@ test('Sim 1 opt-in ring search completes with DEM off without exceeding grid bud
   assert.deepEqual(errors,[]);
  }finally{await context.close()}
 });
+
+test('Sim 1 displays 200 km search reach without allocating a 200 km raster',async()=>{
+ const {p,context}=await page();
+ try{
+  await p.goto(base+'/single.html',{waitUntil:'domcontentloaded'});
+  const errors=[];p.on('pageerror',e=>errors.push(e.message));
+  await p.locator('#lat').fill('15.993741');
+  await p.locator('#lon').fill('99.364571');
+  await p.locator('#tiledMode').check();
+  await p.locator('#autoRange').check();
+  await p.locator('#ringAutoRange').check();
+  await p.locator('#radius').fill('0.5');
+  await p.locator('#gridTarget').selectOption('250');
+  await p.locator('#terrainEnabled').uncheck();
+  await p.evaluate(()=>{
+   window.RFRingRFAdapter=Object.freeze({createController:()=>({search:async()=>({
+    stopReason:'max-search-radius',searchedRadiusKm:200,lastColouredRadiusKm:1,trace:[]
+   })})});
+  });
+  await p.locator('#form').evaluate(form=>form.requestSubmit());
+  await p.waitForFunction(()=>document.querySelector('#mapStatus')?.textContent.includes('คำนวณและวาดสี')||document.querySelector('#error')?.textContent.trim(),null,{timeout:15000}).catch(async e=>{const state=await p.evaluate(()=>({status:document.querySelector('#mapStatus')?.textContent,error:document.querySelector('#error')?.textContent,valid:document.querySelector('#form')?.checkValidity(),invalid:[...document.querySelector('#form').elements].filter(x=>x.willValidate&&!x.checkValidity()).map(x=>({id:x.id,message:x.validationMessage})),info:document.querySelector('#ringExtentInfo')?.textContent}));throw Error('Ring UI browser diagnostic '+JSON.stringify(state)+' '+e.message)});
+  assert.equal(await p.locator('#error').innerText(),'');
+  const info=await p.locator('#ringExtentInfo').innerText();
+  assert.match(info,/Ring Search 200\.0 km/);
+  assert.match(info,/Raster/);
+  assert.ok(info.includes('Raster 1.0 km'));
+  assert.deepEqual(errors,[]);
+ }finally{await context.close()}
+});

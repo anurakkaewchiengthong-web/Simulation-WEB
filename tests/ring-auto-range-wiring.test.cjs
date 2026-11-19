@@ -11,8 +11,9 @@ test('ring mode is opt-in and preserves terrain-enabled legacy search',()=>{
  assert.match(html,/if\(c\.ringAutoRange&&!c\.terrain\)\{await expandRingRange\(c,token,maxRadius\);return\}/);
  assert.match(html,/let blankRings=0;/);
 });
-test('ring search never bypasses fixed-grid compute budget',()=>{
- assert.match(html,/maxSearchRadiusKm:maxRadius/);
+test('long-range search retains a bounded raster budget',()=>{
+ assert.match(html,/maxSearchRadiusKm:200/);
+ assert.match(html,/RFSearchRasterExtent\.plan\(/);
  assert.match(html,/c\.radius=Math\.min\(maxRadius/);
  assert.match(html,/stopReason==='dem-incomplete'/);
 });
