@@ -36,5 +36,7 @@ jobs:
         run: node --test tests/on-demand-live-wiring.test.cjs
       - name: Ring RF adapter tests
         run: node --test tests/ring-rf-adapter.test.cjs
+      - name: Ring auto-range wiring tests
+        run: node --test tests/ring-auto-range-wiring.test.cjs
       - name: HTML inline script syntax
         run: node --test tests/html-inline-syntax.test.cjs
