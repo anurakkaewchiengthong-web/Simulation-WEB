@@ -4,7 +4,7 @@
 // propagation callback. No changes to link budget, DEM or export algorithms.
 function create({mode='down',floor=-105,opacity=0.65}={}){
  if(!['down','up'].includes(mode)||!Number.isFinite(floor)||!(opacity>=0&&opacity<=1))throw Error('Invalid renderer options');
- const bands=[[-60,[0,0,255]],[-70,[0,169,254]],[-80,[0,254,169]],[-90,[0,254,0]],[-100,[255,169,0]],[-105,[255,0,0]]];
+ const bands=[[-45,[0,0,255]],[-55,[0,169,254]],[-65,[0,254,169]],[-75,[0,254,0]],[-85,[169,254,0]],[-95,[254,169,0]],[-100,[255,0,0]],[-105,[255,0,0]]];
  function classify(dbm){
   if(!Number.isFinite(dbm)||dbm<floor)return null;
   for(const [threshold,rgb] of bands)if(dbm>=threshold)return rgb;
