@@ -46,5 +46,7 @@ jobs:
         run: node --test tests/viewport-tiles.test.cjs
       - name: Viewport RF scheduler tests
         run: node --test tests/viewport-rf.test.cjs
+      - name: Viewport renderer RSSI parity tests
+        run: node --test tests/viewport-renderer.test.cjs
       - name: HTML inline script syntax
         run: node --test tests/html-inline-syntax.test.cjs
