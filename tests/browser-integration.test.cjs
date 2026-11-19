@@ -170,7 +170,7 @@ test('Sim 1 opt-in ring search completes with DEM off without exceeding grid bud
  }finally{await context.close()}
 });
 
-test('Sim 1 reports search reach beyond bounded raster without claiming full coverage',async()=>{
+test('Sim 1 displays 200 km search reach without allocating a 200 km raster',async()=>{
  const {p,context}=await page();
  try{
   await p.goto(base+'/single.html',{waitUntil:'domcontentloaded'});
@@ -183,7 +183,7 @@ test('Sim 1 reports search reach beyond bounded raster without claiming full cov
   await p.locator('#terrainEnabled').uncheck();
   await p.evaluate(()=>{
    window.RFRingRFAdapter=Object.freeze({createController:()=>({search:async()=>({
-    stopReason:'max-search-radius',searchedRadiusKm:200,lastColouredRadiusKm:150,trace:[]
+    stopReason:'max-search-radius',searchedRadiusKm:200,lastColouredRadiusKm:1,trace:[]
    })})});
   });
   await p.locator('#form').evaluate(form=>form.requestSubmit());
@@ -192,7 +192,7 @@ test('Sim 1 reports search reach beyond bounded raster without claiming full cov
   const info=await p.locator('#ringExtentInfo').innerText();
   assert.match(info,/Ring Search 200\.0 km/);
   assert.match(info,/Raster/);
-  assert.match(info,/ยังไม่ได้แสดงสีครบ/);
+  assert.match(info,/Raster 1\\.0 km/);
   assert.deepEqual(errors,[]);
  }finally{await context.close()}
 });
