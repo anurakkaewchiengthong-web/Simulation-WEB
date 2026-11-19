@@ -42,5 +42,7 @@ jobs:
         run: node --test tests/search-raster-extent.test.cjs
       - name: Ring extent UI wiring tests
         run: node --test tests/ring-extent-ui.test.cjs
+      - name: Viewport tile planner tests
+        run: node --test tests/viewport-tiles.test.cjs
       - name: HTML inline script syntax
         run: node --test tests/html-inline-syntax.test.cjs
