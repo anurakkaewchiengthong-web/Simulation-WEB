@@ -148,3 +148,24 @@ test('Sim 1 tiled DEM uses bundled native terrain and completes RF calculation',
   assert.deepEqual(errors,[]);
  }finally{await context.close()}
 });
+
+test('Sim 1 opt-in ring search completes with DEM off without exceeding grid budget',async()=>{
+ const {p,context}=await page();
+ try{
+  await p.goto(base+'/single.html',{waitUntil:'domcontentloaded'});
+  const errors=[];p.on('pageerror',e=>errors.push(e.message));
+  await p.locator('#lat').fill('15.993741');
+  await p.locator('#lon').fill('99.364571');
+  await p.locator('#tiledMode').check();
+  await p.locator('#autoRange').check();
+  await p.locator('#ringAutoRange').check();
+  await p.locator('#radius').fill('0.5');
+  await p.locator('#gridTarget').selectOption('250');
+  await p.locator('#terrainEnabled').uncheck();
+  await p.locator('#form').evaluate(form=>form.requestSubmit());
+  await p.waitForFunction(()=>document.querySelector('#mapStatus')?.textContent.includes('คำนวณและวาดสี')||document.querySelector('#error')?.textContent.trim(),null,{timeout:45000});
+  assert.equal(await p.locator('#error').innerText(),'');
+  assert.match(await p.locator('#mapStatus').innerText(),/คำนวณแบบ Tiles/);
+  assert.deepEqual(errors,[]);
+ }finally{await context.close()}
+});
