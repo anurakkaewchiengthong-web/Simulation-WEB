@@ -22,3 +22,24 @@ test('explicit cancellation is supported',async()=>{
  const p=adapter.requestViewport(near);adapter.cancel();
  await assert.rejects(p,/TILE_CANCELLED/);
 });
+
+test('revisiting viewport reuses completed tile results and cache can be cleared',async()=>{
+ let calls=0,progress=[];
+ const adapter=create({propagation:()=>{calls++;return {down:-80,up:-85}},config:{},origin,spacingM:50,tileSize:2,maxCache:8,maxVisibleTiles:8,onProgress:p=>progress.push(p)});
+ await adapter.requestViewport(near);const first=calls;
+ await adapter.requestViewport(near);
+ assert.equal(calls,first);
+ assert.ok(progress.slice(-1).every(p=>p.cacheHit));
+ assert.ok(adapter.stats().viewportCached>0);
+ adapter.clearCache();
+ assert.equal(adapter.stats().viewportCached,0);
+ await adapter.requestViewport(near);
+ assert.ok(calls>first);
+});
+test('viewport change does not cache partial cancelled tiles',async()=>{
+ let calls=0;
+ const adapter=create({propagation:()=>{calls++;return {down:-90,up:-90}},config:{},origin,spacingM:50,tileSize:64,maxVisibleTiles:8});
+ const p=adapter.requestViewport(near);adapter.cancel();
+ await assert.rejects(p,/TILE_CANCELLED/);
+ assert.equal(adapter.stats().viewportCached,0);
+});
