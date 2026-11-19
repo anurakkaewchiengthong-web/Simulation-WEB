@@ -40,5 +40,7 @@ jobs:
         run: node --test tests/ring-auto-range-wiring.test.cjs
       - name: Search and raster extent planning tests
         run: node --test tests/search-raster-extent.test.cjs
+      - name: Ring extent UI wiring tests
+        run: node --test tests/ring-extent-ui.test.cjs
       - name: HTML inline script syntax
         run: node --test tests/html-inline-syntax.test.cjs
