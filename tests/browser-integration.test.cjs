@@ -169,3 +169,30 @@ test('Sim 1 opt-in ring search completes with DEM off without exceeding grid bud
   assert.deepEqual(errors,[]);
  }finally{await context.close()}
 });
+
+test('Sim 1 reports search reach beyond bounded raster without claiming full coverage',async()=>{
+ const {p,context}=await page();
+ try{
+  await p.goto(base+'/single.html',{waitUntil:'domcontentloaded'});
+  const errors=[];p.on('pageerror',e=>errors.push(e.message));
+  await p.locator('#tiledMode').check();
+  await p.locator('#autoRange').check();
+  await p.locator('#ringAutoRange').check();
+  await p.locator('#radius').fill('0.5');
+  await p.locator('#gridTarget').selectOption('250');
+  await p.locator('#terrainEnabled').uncheck();
+  await p.evaluate(()=>{
+   window.RFRingRFAdapter=Object.freeze({createController:()=>({search:async()=>({
+    stopReason:'max-search-radius',searchedRadiusKm:200,lastColouredRadiusKm:150,trace:[]
+   })})});
+  });
+  await p.locator('#form').evaluate(form=>form.requestSubmit());
+  await p.waitForFunction(()=>document.querySelector('#mapStatus')?.textContent.includes('คำนวณและวาดสี')||document.querySelector('#error')?.textContent.trim(),null,{timeout:45000});
+  assert.equal(await p.locator('#error').innerText(),'');
+  const info=await p.locator('#ringExtentInfo').innerText();
+  assert.match(info,/Ring Search 200\.0 km/);
+  assert.match(info,/Raster/);
+  assert.match(info,/ยังไม่ได้แสดงสีครบ/);
+  assert.deepEqual(errors,[]);
+ }finally{await context.close()}
+});
