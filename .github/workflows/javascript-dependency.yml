@@ -46,5 +46,7 @@ jobs:
         run: node --test tests/viewport-tiles.test.cjs
       - name: Viewport RF scheduler tests
         run: node --test tests/viewport-rf.test.cjs
+      - name: Nong Khai shared online DEM routing tests
+        run: node --test tests/nong-khai-online-dem.test.cjs
       - name: HTML inline script syntax
         run: node --test tests/html-inline-syntax.test.cjs
