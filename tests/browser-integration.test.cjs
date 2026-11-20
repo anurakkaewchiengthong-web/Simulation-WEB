@@ -127,7 +127,7 @@ test('Sim 1 on-demand tiled result is produced with DEM disabled and expected sp
  }finally{await context.close()}
 });
 
-test('Sim 1 tiled DEM uses bundled native terrain and completes RF calculation',async()=>{
+test('Sim 1 tiled DEM uses shared online terrain and completes RF calculation',async()=>{
  const {p,context}=await page();
  try{
   await p.goto(base+'/single.html',{waitUntil:'domcontentloaded'});
@@ -143,7 +143,7 @@ test('Sim 1 tiled DEM uses bundled native terrain and completes RF calculation',
   await p.waitForFunction(()=>document.querySelector('#mapStatus')?.textContent.includes('คำนวณและวาดสี')||document.querySelector('#error')?.textContent.trim(),null,{timeout:60000});
   const status=await p.locator('#mapStatus').innerText();
   assert.equal(await p.locator('#error').innerText(),'');
-  assert.match(status,/DEM พิกัดเริ่มต้น ต้นฉบับ 30\.15 ม\./);
+  assert.match(status,/DEM ออนไลน์ \d+ แผ่น/);
   assert.match(status,/คำนวณแบบ Tiles/);
   assert.deepEqual(errors,[]);
  }finally{await context.close()}
