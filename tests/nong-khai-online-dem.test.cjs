@@ -4,9 +4,11 @@ const html=fs.readFileSync('dist/single.html','utf8');
 const start=html.indexOf('async function loadDEM(c,token)');
 const end=html.indexOf('\nfunction propagation(',start);
 const loader=html.slice(start,end);
-test('Nong Khai does not select the bundled native DEM path',()=>{
- assert.match(loader,/\[\[defaultDEM,'default'\]\]/);
- assert.doesNotMatch(loader,/\[nongDEM,'nong'\]/);
+test('all areas use only the shared AWS Terrarium DEM loader',()=>{
+ assert.doesNotMatch(loader,/loadNong\(/);
+ assert.doesNotMatch(loader,/bundledCovers\(/);
+ assert.doesNotMatch(loader,/\[\[defaultDEM/);
+ assert.doesNotMatch(loader,/demSource='bundled'/);
 });
 test('shared AWS Terrarium loader and incomplete DEM guard are retained',()=>{
  assert.match(loader,/s3\.amazonaws\.com\/elevation-tiles-prod\/terrarium/);
