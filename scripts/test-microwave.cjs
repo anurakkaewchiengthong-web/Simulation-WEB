@@ -1,0 +1,20 @@
+const assert=require('node:assert/strict');
+const M=require('../dist/mw-math.js');global.MWMath=M;require('../dist/mw-dem.js');
+const a={lat:8.204688,lon:100.254997,ground:5.26,antAGL:50,power:30.5,gain:34.9,loss:0,threshold:-79};
+const b={...a,lat:8.04059,lon:100.27467,ground:2.19};
+const c={a,b,freq:7.575,k:4/3,clearance:1,step:25,obstacles:[],clutter:0,diffraction:'auto',manualDiff:0,gas:.19,other:0,margin:1,rain:11.98};
+const near=(x,y,t)=>assert.ok(Math.abs(x-y)<t,`${x} != ${y} +/- ${t}`);
+const geo=MWDEM.geometry(c);near(geo.distance,18278,1);const end=M.direct(a,geo.bearing,geo.distance);near(end.lat,b.lat,1e-8);near(end.lon,b.lon,1e-8);
+const terrain={...geo,rows:geo.rows.map(r=>({...r,samples:r.samples.map(s=>({...s,ground:0}))}))};
+const r=M.analyze(c,terrain);assert.ok(r.clear);near(r.fmax,13.45,.01);near(r.fspl,135.26,.02);near(r.ab.planned,-36.15,.02);near(r.ab.thermal,42.84,.01);assert.equal(r.diffraction,0);
+const raised=M.analyze({...c,obstacles:[{x:geo.rows[366].x,height:60,width:50,across:50}]},terrain);assert.ok(!raised.clear);assert.ok(raised.minLOS<0);assert.ok(raised.diffraction>0);assert.ok(raised.ab.planned<r.ab.planned);
+const off=structuredClone(terrain);off.rows[366].samples[9].ground=60;const offR=M.analyze(c,off);assert.ok(!offR.clear);assert.ok(offR.worst.offset>0);assert.ok(offR.minLOS>0);
+const missing=structuredClone(terrain);missing.rows[200].samples[8].ground=NaN;assert.ok(!M.analyze(c,missing).clear);
+assert.ok(M.analyze({...c,k:2/3},terrain).minClear<r.minClear);
+const asym=M.analyze({...c,b:{...b,power:20,threshold:-70}},terrain);near(asym.ab.planned,r.ab.planned,1e-10);near(asym.ba.planned,r.ba.planned-10.5,1e-10);near(asym.ab.thermal,r.ab.thermal-9,1e-10);
+const override=M.analyze({...c,a:{...a,ground:15.26}},terrain);assert.equal(override.rows[0].ground,15.26);assert.equal(override.rows[1].ground,0);assert.ok(override.minClear>r.minClear);
+const short=MWDEM.geometry({...c,b:M.direct(a,90,11),step:50});assert.equal(short.rows.length,3);
+const ob=MWDEM.geometry({...c,obstacles:[{x:5555,height:20,width:1,across:1}]});assert.ok(ob.rows.some(r=>r.x===5555));
+console.log('PASS microwave: PDF reference, geodesic roundtrip, Fresnel, directional budget, central/off-axis obstacle, missing DEM, K, ground override, short links, narrow obstacles');
+
+const trees=M.analyze({...c,clutter:10},terrain);near(trees.minClear,r.minClear-10,1e-8);near(trees.rows[366].top,r.rows[366].top+10,1e-8);assert.ok(!M.analyze({...c,clutter:70},terrain).clear);console.log('PASS tree allowance changes clearance and obstruction classification');

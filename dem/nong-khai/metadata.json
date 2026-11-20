@@ -1,0 +1,49 @@
+{
+  "name": "Nong Khai Province native-resolution DEM",
+  "original_dem": {
+    "file": "DEM.bil",
+    "drive_id": "1QNUYHcbz9bWRRK-30pZSuXZx9-iaE6hJ",
+    "size_bytes": 3353928200,
+    "source_crs": "EPSG:32647",
+    "dtype": "int16 little endian",
+    "nodata": -32767,
+    "georeferencing": "ULXMAP/ULYMAP are centers of upper-left source pixel",
+    "vertical_datum": "not specified by supplied .hdr/.prj"
+  },
+  "boundary": {
+    "source": "https://www.geoboundaries.org/api/current/gbOpen/THA/ADM1/",
+    "provider": "geoBoundaries THA ADM1 gbOpen / OSM",
+    "source_year": "2017",
+    "license": "ODbL 1.0",
+    "shape_iso": "TH-43",
+    "feature_sha256": "cd023f860ed854c678e1011491c37598b5e587a8773c6e29f2a98d9de70d3c74"
+  },
+  "projection": "EPSG:32647",
+  "pixel_m": 30.1469654783933,
+  "source_window": {
+    "col_start": 16822,
+    "col_end_exclusive": 21592,
+    "row_start": 8219,
+    "row_end_exclusive": 10890
+  },
+  "left_m": 823716.347994793,
+  "top_m": 2029199.8061258246,
+  "width": 4770,
+  "height": 2671,
+  "nodata": -32767,
+  "valid_cells_inside_province": 3657436,
+  "all_cells_inside_province": 3658258,
+  "elevation_min_m": 147,
+  "elevation_max_m": 920,
+  "cog": "nong-khai-30m.tif",
+  "browser_tiles": {
+    "directory": "tiles-final",
+    "size": 1024,
+    "columns": 5,
+    "rows": 3,
+    "encoding": "R:G are (signed elevation + 32768) high:low bytes; B=255 for valid, 0 for nodata; pixel centers map to original UTM grid",
+    "tiles_count": 15,
+    "tiles_bytes": 3673605,
+    "not_masked_to_province": true
+  }
+}

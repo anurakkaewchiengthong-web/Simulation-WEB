@@ -1,0 +1,76 @@
+{
+  "parameters": {
+    "lat": 18.106857,
+    "lon": 102.227164,
+    "radius": 10,
+    "gridTarget": 25,
+    "model": "bullington",
+    "pattern": "omni",
+    "freq": 857,
+    "terrain": true,
+    "az": 0,
+    "beam": 90,
+    "tx": 43,
+    "gain": 10,
+    "feed": 2,
+    "mobileGain": 0,
+    "mobileLoss": 0,
+    "mobileTx": 33,
+    "excess": 0,
+    "preTmaLoss": 0,
+    "ulLoss": 0,
+    "dlLoss": 0,
+    "tmaEnabled": false,
+    "baseHeight": 50,
+    "mobileHeight": 1.5,
+    "referenceHeight": 1.5
+  },
+  "demPixelM": 18.16293884319398,
+  "tiles": 56,
+  "results": [
+    {
+      "spacing": 400,
+      "n": 51,
+      "actualM": 392.15686274509807,
+      "valid": 2053,
+      "missing": 0,
+      "seconds": 0.6494752599999999,
+      "holdoutSamples": 1200,
+      "meanAbsoluteDb": 3.0553292400330934,
+      "p95AbsoluteDb": 12.150136845817329
+    },
+    {
+      "spacing": 100,
+      "n": 201,
+      "actualM": 99.50248756218906,
+      "valid": 31757,
+      "missing": 0,
+      "seconds": 9.363478497000001,
+      "holdoutSamples": 1200,
+      "meanAbsoluteDb": 1.1665561260254422,
+      "p95AbsoluteDb": 5.708330520665555
+    },
+    {
+      "spacing": 50,
+      "n": 401,
+      "actualM": 49.87531172069826,
+      "valid": 126309,
+      "missing": 0,
+      "seconds": 35.251533300000006,
+      "holdoutSamples": 1200,
+      "meanAbsoluteDb": 0.5520842994219396,
+      "p95AbsoluteDb": 2.59490156510482
+    },
+    {
+      "spacing": 25,
+      "n": 801,
+      "actualM": 24.968789013732835,
+      "valid": 503973,
+      "missing": 0,
+      "seconds": 132.01589333299998,
+      "holdoutSamples": 1200,
+      "meanAbsoluteDb": 0.2271233564341124,
+      "p95AbsoluteDb": 1.2031719259585998
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "description": "Terrarium DEM mosaic for the site's default 25 km study area",
+  "center": { "lat": 16.029156, "lon": 100.627809 },
+  "study_radius_km": 25,
+  "zoom": 12,
+  "tile_size_px": 256,
+  "tile_bounds_inclusive": { "x_min": 3190, "x_max": 3195, "y_min": 1860, "y_max": 1865 },
+  "image": "study-area-z12.png",
+  "image_size_px": [1536, 1536],
+  "encoding": "Terrarium RGB: elevation_m = R*256 + G + B/256 - 32768",
+  "source": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png",
+  "dataset": "https://registry.opendata.aws/terrain-tiles/",
+  "attribution": "https://github.com/tilezen/joerd/blob/master/docs/attribution.md",
+  "accessed_utc": "2026-09-24",
+  "notes": "Mosaic preserves source tile pixels without resampling. Web Mercator zoom 12 pixel spacing is about 37 m at the center; native terrain source resolution may be lower. This is DEM elevation, not land cover or clutter classification."
+}

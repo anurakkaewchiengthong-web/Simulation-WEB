@@ -1,0 +1,18 @@
+(()=>{'use strict';
+const $=id=>document.getElementById(id),main=document.querySelector('main'),form=$('mwForm'),results=$('results');
+const intro=document.createElement('div');intro.className='mw-workflow';intro.innerHTML='<div><span class="mw-eyebrow">MICROWAVE WORKSPACE</span><h1>ตั้งค่าลิงก์ แล้วอ่านผลในส่วนเดียว</h1><p>กรอกข้อมูล → คำนวณลิงก์ → ตรวจผลและส่งออกรายงาน</p></div><a href="#mwInputZone">เริ่มกรอกข้อมูล ↓</a>';main.prepend(intro);
+const nav=document.createElement('nav');nav.className='mw-jump';nav.setAttribute('aria-label','หมวดข้อมูล Microwave Link');nav.innerHTML='<strong>ไปยังส่วน</strong>';intro.after(nav);
+const inputZone=document.createElement('div');inputZone.id='mwInputZone';inputZone.className='mw-zone mw-input-zone';form.before(inputZone);inputZone.innerHTML='<div class="mw-zone-heading"><span class="mw-step">01</span><div><span class="mw-eyebrow">INPUT · ข้อมูลสำหรับคำนวณ</span><h2>กรอกข้อมูลและตั้งค่าการวิเคราะห์</h2><p>ระบุพิกัดสถานี A/B เลือกอุปกรณ์และเงื่อนไข แล้วกด “อ่าน DEM และคำนวณลิงก์”</p></div></div>';inputZone.append(form,$('mxpdPanel'),$('dishSizing'));
+const outZone=document.createElement('div');outZone.id='mwOutputZone';outZone.className='mw-zone mw-output-zone';inputZone.after(outZone);outZone.innerHTML='<div class="mw-zone-heading"><span class="mw-step">02</span><div><span class="mw-eyebrow">OUTPUT · ผลจากการวิเคราะห์</span><h2>ผลการคำนวณและคำแนะนำ</h2><p>ตรวจแนวลิงก์ โพรไฟล์ Link Budget และ Availability ก่อนส่งออกรายงาน</p></div><a href="#mwInputZone">กลับไปแก้ข้อมูล ↑</a></div><div id="mwEmptyResults" class="mw-empty"><b>ยังไม่มีผลการคำนวณ</b><p>กรอกข้อมูลด้านบนแล้วกดคำนวณ ผลจะแสดงในหมวดนี้</p></div>';outZone.append(results);
+function outputCard(id,title,status,output){const card=document.createElement('section');card.id=id;card.className='mw-extra-result';const h=document.createElement('h2');h.textContent=title;card.append(h,$(status),$(output));outZone.append(card);return card;}
+outputCard('mwXpdResult','Mₓₚᴅ · ผล Equivalent XPD margin','mxStatus','mxOutput');outputCard('mwDishResult','ผลประเมินและคำแนะนำขนาดจาน','dishStatus','dishOutput');
+function resultLink(parent,target){const a=document.createElement('a');a.className='mw-result-link';a.href='#'+target;a.textContent='ดูผลการวิเคราะห์ในหมวดผลลัพธ์ ↓';parent.append(a);}
+resultLink($('mxpdPanel'),'mwXpdResult');resultLink($('dishSizing'),'mwDishResult');
+const linkSection=$('linkName').closest('section');linkSection.id='mwLinkInputs';
+form.prepend($('endpoints'));
+const groups=[['endpoints','พิกัดและข้อมูลสถานี A / B','01'],['equipmentCatalogue','อุปกรณ์','02'],['mwLinkInputs','ลิงก์และสภาพแวดล้อม','03'],['availabilityInputs','ภูมิอากาศ / Availability','04'],['modulationEditor','Modulation','05'],['mxpdPanel','XPD / C/I','06'],['dishSizing','เป้าหมายขนาดจาน','07']];
+for(const [id,label,num] of groups){const node=$(id);node.classList.add('mw-input-card');node.dataset.category=num+' · '+label;const a=document.createElement('a');a.href='#'+id;a.textContent=label;nav.append(a);}
+const resultNav=document.createElement('a');resultNav.href='#mwOutputZone';resultNav.className='mw-jump-output';resultNav.textContent='ผลการวิเคราะห์ ↓';nav.append(resultNav);
+const resultNames=['สรุปแนวลิงก์','โพรไฟล์ 2 มิติ','ภาพ 3 มิติ','Link Budget','Availability'];[...results.children].filter(e=>e.tagName==='SECTION').forEach((e,i)=>{e.classList.add('mw-result-card');e.dataset.category='ผลการคำนวณ · '+(resultNames[i]||'รายละเอียด')});
+const empty=()=>{$('mwEmptyResults').hidden=!results.hidden};new MutationObserver(empty).observe(results,{attributes:true,attributeFilter:['hidden']});empty();
+})();
