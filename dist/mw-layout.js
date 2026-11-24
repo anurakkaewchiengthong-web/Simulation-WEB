@@ -36,8 +36,8 @@ $('calculate').type='button';$('calculate').textContent='Calculate Path Profile'
 const pathButton=document.createElement('button');pathButton.type='button';pathButton.textContent='Calculate Path Profile';pathButton.onclick=calculatePath;outZone.before(pathButton);
 const submit=form.onsubmit;form.onsubmit=e=>{e.preventDefault();return advanced.open?submit(e):calculatePath(e)};
 run.onclick=()=>{try{if(!result||pathSignature!==signature()){ $('status').textContent='กรุณาคำนวณ Path Profile ใหม่ก่อน';return}form.requestSubmit()}catch(e){$('status').textContent=e.message}};
-globalThis.MWPathUI={pathReady(){advancedResults.hidden=true;globalThis.MWXPDUI?.invalidate();globalThis.MWDishUI?.invalidate()},budgetReady(){advancedResults.hidden=false;advanced.open=true}};
-form.addEventListener('input',()=>{advancedResults.hidden=true});form.addEventListener('change',()=>{advancedResults.hidden=true});
+globalThis.MWPathUI={invalidateBudget(){advancedResults.hidden=true},pathReady(){advancedResults.hidden=true;globalThis.MWXPDUI?.invalidate();globalThis.MWDishUI?.invalidate()},budgetReady(){advancedResults.hidden=false;advanced.open=true}};
+
 for(const a of nav.querySelectorAll('a'))a.addEventListener('click',()=>{if(advanced.querySelector(a.getAttribute('href')))advanced.open=true});
 intro.querySelector('h1').textContent='Path Profile First · วิเคราะห์แนวลิงก์ก่อน';
 intro.querySelector('p').textContent='พิกัดและภูมิประเทศ → Fresnel / LOS → Link Budget (เลือกเพิ่มเติม)';
