@@ -1,0 +1,12 @@
+const assert=require('node:assert/strict'),X=require('../dist/mw-xpd.js');
+const o={xpdA:30,xpdB:30,p0Percent:1,freq:7.5,layout:'single',xpic:true,xpifA:20,xpifB:20,modes:[{name:'QPSK',ciA:25,ciB:30}]};
+const v=X.calculate(o);assert.equal(v.P0,.01);assert.equal(v.xpd0,35);assert.ok(Math.abs(v.eta-(1-Math.exp(-.2*.01**.75)))<1e-14);assert.equal(v.rows[1].margin-v.rows[0].margin,5);
+assert.equal(v.rows[0].margin-X.calculate({...o,xpic:false}).rows[0].margin,20);
+assert.equal(X.calculate({...o,modes:[{name:'QPSK',ciA:null,ciB:null}]}).rows[0].margin,null);
+assert.equal(X.calculate({...o,xpdA:40,xpdB:45}).xpd0,40);
+assert.ok(X.calculate({...o,p0Percent:0}).errors.length);assert.ok(X.calculate({...o,xpdA:null}).errors.length);assert.ok(X.calculate({...o,layout:'separate',spacingA:null,spacingB:2}).errors.length);
+const z=X.calculate({...o,layout:'separate',spacingA:1,spacingB:5});assert.notEqual(z.rows[0].k,z.rows[1].k);
+assert.ok(X.calculate({...o,modes:[{name:'QPSK',ciA:100,ciB:100}]}).rows[0].margin<0);
+assert.equal(X.calculate({...o,xpifA:null}).rows[1].margin,null);assert.ok(Number.isFinite(X.calculate({...o,xpic:false,xpifA:null}).rows[1].margin));
+assert.ok(!X.html(X.calculate({...o,ber:'<img onerror=alert(1)>'})).includes('<img'));
+console.log('PASS XPD formulas, units, missing inputs, XPIC, directionality, spacing, negative margin, escaping');

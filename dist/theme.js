@@ -1,0 +1,7 @@
+/* Shared theme preference; applied before paint, synchronized across documents. */
+(()=>{'use strict';const key='rf-sim-theme',root=document.documentElement;let mode='light';try{mode=localStorage.getItem(key)==='dark'?'dark':'light'}catch{}
+function apply(value){mode=value==='dark'?'dark':'light';root.dataset.theme=mode;root.style.colorScheme=mode;const b=document.getElementById('themeToggle');if(b){b.textContent=mode==='dark'?'☀ โหมดสว่าง':'☾ โหมดมืด';b.setAttribute('aria-pressed',String(mode==='dark'));b.title=mode==='dark'?'เปลี่ยนเป็นธีม FORTH โหมดสว่าง':'เปลี่ยนเป็นธีมเดิม โหมดมืด'}document.querySelector('meta[name="theme-color"]')?.setAttribute('content',mode==='dark'?'#081725':'#123d8d')}
+apply(mode);addEventListener('storage',e=>{if(e.key===key)apply(e.newValue)});
+addEventListener('message',e=>{if(e.origin===location.origin&&e.data?.type==='rf-theme')apply(e.data.theme)});
+document.addEventListener('DOMContentLoaded',()=>{if(new URLSearchParams(location.search).has('pair'))return;const b=document.createElement('button');b.type='button';b.id='themeToggle';b.className='theme-toggle';b.setAttribute('aria-label','สลับโหมดสว่างและโหมดมืด');b.onclick=()=>{apply(mode==='light'?'dark':'light');try{localStorage.setItem(key,mode)}catch{}for(const frame of document.querySelectorAll('iframe'))frame.contentWindow?.postMessage({type:'rf-theme',theme:mode},location.origin)};(document.querySelector('body>header')||document.body).append(b);apply(mode)});
+})();

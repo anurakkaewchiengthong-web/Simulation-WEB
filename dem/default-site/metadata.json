@@ -1,0 +1,41 @@
+{
+  "description": "Native DEM for the default simulated base station",
+  "center": {
+    "lat": 15.993741,
+    "lon": 99.364571
+  },
+  "study_radius_km": 25,
+  "margin_km": 5,
+  "original_dem": {
+    "file": "DEM.bil",
+    "drive_url": "https://drive.google.com/uc?export=download&id=1QNUYHcbz9bWRRK-30pZSuXZx9-iaE6hJ",
+    "crs": "EPSG:32647",
+    "dtype": "int16 little endian",
+    "nodata": -32767,
+    "vertical_datum": "not specified by supplied source .hdr/.prj"
+  },
+  "pixel_m": 30.1469654783933,
+  "projection": "EPSG:32647",
+  "left_m": 508982.0284003669,
+  "top_m": 1798304.1975268102,
+  "width": 1992,
+  "height": 1992,
+  "nodata": -32767,
+  "source_window": {
+    "col_start": 6382,
+    "col_end_exclusive": 8374,
+    "row_start": 15878,
+    "row_end_exclusive": 17870
+  },
+  "valid_cells": 3968064,
+  "elevation_min_m": 60,
+  "elevation_max_m": 1946,
+  "cog": "default-site-30m.tif",
+  "browser_tiles": {
+    "directory": "tiles-final",
+    "size": 1024,
+    "tiles_count": 4,
+    "tiles_bytes": 2100311,
+    "encoding": "R:G = signed elevation + 32768; B=255 valid, 0 NoData"
+  }
+}
